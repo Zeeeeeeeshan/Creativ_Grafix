@@ -61,7 +61,7 @@ export default function Home() {
           <span className="border-2 border-black w-1/12 mt-2"></span>
         </div>
 
-        <KeyProducts color={"red-200"} />
+        <KeyProducts  />
         <div className="text-center mb-3">
           <Link to="/products" className="border-b-red-500 border-b">
             View All Products

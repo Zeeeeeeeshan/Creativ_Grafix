@@ -45,7 +45,9 @@ export default function KeyProducts({ color }) {
             <div
               key={product.name}
               className={`flex flex-col items-center justify-center p-3 cursor-pointer rounded-t-2xl ${
-                selectedProduct === product.name ? `bg-${color}` : ""
+                selectedProduct === product.name
+                  ? `${color ? `bg-${color}` : `bg-red-200`}`
+                  : ""
               }`}
               onClick={() => setSelectedProduct(product.name)}
             >
@@ -59,7 +61,9 @@ export default function KeyProducts({ color }) {
           ))}
         </div>
       </div>
-      <div className={`w-full h-100 bg-${color}`}></div>
+      <div
+        className={`w-full h-100 bg-${color ? `bg-${color}` : `red-200`}`}
+      ></div>
     </div>
   );
 }
