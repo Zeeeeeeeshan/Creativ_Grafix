@@ -118,19 +118,7 @@ export default function Navbar() {
                 }`}
               ></span>
             </button>
-            <div className="flex items-center gap-x-4">
-              <div className="relative cursor-pointer">
-                <img src="/NavCart.svg" alt="Cart" className="w-6 h-6" />
-                <span className="absolute -top-2 -right-2 px-1.5 bg-redShade rounded-full text-white text-xs">
-                  0
-                </span>
-              </div>
-              <img
-                src="/NavLogin.svg"
-                alt="Login"
-                className="w-6 h-6 cursor-pointer"
-              />
-            </div>
+            
           </div>
         </div>
 
