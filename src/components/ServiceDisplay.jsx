@@ -1,0 +1,105 @@
+export default function ServiceDisplay() {
+  const services = [
+    {
+      id: 1,
+      title: "VISITING CARDS",
+      image: "/HomeVisitingCard.svg",
+    },
+    {
+      id: 2,
+      title: "BROCHURES",
+      image: "/HomeBrochures.svg",
+    },
+    {
+      id: 3,
+      title: "CALENDARS",
+      image: "/HomeCalendar.svg",
+    },
+    {
+      id: 4,
+      title: "PACKAGING",
+      image: "/HomePackaging.svg",
+    },
+    {
+      id: 5,
+      title: "BILL BOOKS",
+      image: "/HomeBillBooks.svg",
+    },
+    {
+      id: 6,
+      title: "LABELS",
+      image: "/HomeLabels.svg",
+    },
+  ];
+
+  return (
+    <section className="bg-[#222222] flex flex-col py-10 gap-y-7 w-full overflow-hidden">
+      <div className="flex flex-col justify-center items-center">
+        <h1 className="text-white text-2xl md:text-3xl lg:text-4xl">
+          OUR <span className="font-bold text-red-500">SERVICES</span>
+        </h1>
+        <span className="border-2 border-white w-20 my-3"></span>
+      </div>
+
+      {/* Scrollable container */}
+      <div className="overflow-x-auto scrollbar-hide px-4 md:px-8">
+        <div className="flex  min-w-max pb-4">
+          {services.map((service) => (
+            <div
+              key={service.id}
+              className="flex-shrink-0 w-64 md:w-64 lg:w-76 group cursor-pointer"
+            >
+              <div className="rounded-2xl overflow-hidden">
+                {/* Image Container with fixed height */}
+                <div className="h-44 md:h-62 lg:h-70 flex items-center justify-center">
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+
+                {/* Title */}
+                <div className=" py-4 px-6">
+                  <h3 className="text-white font-bold text-center text-sm md:text-base lg:text-lg tracking-wider">
+                    {service.title}
+                  </h3>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Mobile scroll indicator */}
+      <div className="md:hidden text-center">
+        <p className="text-gray-400 text-sm flex items-center justify-center gap-2">
+          <span>Swipe to see more</span>
+          <svg
+            className="w-4 h-4"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M17 8l4 4m0 0l-4 4m4-4H3"
+            />
+          </svg>
+        </p>
+      </div>
+
+      <style jsx>{`
+        .scrollbar-hide::-webkit-scrollbar {
+          display: none;
+        }
+        .scrollbar-hide {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
+      `}</style>
+    </section>
+  );
+}
