@@ -1,4 +1,8 @@
+import { useEffect, useRef } from "react";
+
 export default function ServiceDisplay() {
+  const scrollRef = useRef(null);
+
   const services = [
     {
       id: 1,
@@ -32,26 +36,64 @@ export default function ServiceDisplay() {
     },
   ];
 
+  // Duplicate services for infinite scroll
+  const duplicatedServices = [
+    ...services,
+    ...services,
+    ...services,
+    ...services,
+  ];
+
+  useEffect(() => {
+    const scrollContainer = scrollRef.current;
+    if (!scrollContainer) return;
+
+    let animationId;
+    let scrollPosition = 0;
+    const scrollSpeed = 0.5; // Adjust speed (lower = slower, higher = faster)
+
+    const animate = () => {
+      scrollPosition += scrollSpeed;
+
+      // Reset scroll when reaching the end of first set
+      if (scrollPosition >= scrollContainer.scrollWidth / 3) {
+        scrollPosition = 0;
+      }
+
+      scrollContainer.scrollLeft = scrollPosition;
+      animationId = requestAnimationFrame(animate);
+    };
+
+    animationId = requestAnimationFrame(animate);
+
+    return () => {
+      cancelAnimationFrame(animationId);
+    };
+  }, []);
+
   return (
     <section className="bg-[#222222] flex flex-col py-10 gap-y-7 w-full overflow-hidden">
       <div className="flex flex-col justify-center items-center">
         <h1 className="text-white text-2xl md:text-3xl lg:text-4xl">
-          OUR <span className="font-bold text-red-500">SERVICES</span>
+          OUR <span className="font-bold text-redShade">SERVICES</span>
         </h1>
         <span className="border-2 border-white w-20 my-3"></span>
       </div>
 
-      {/* Scrollable container */}
-      <div className="overflow-x-auto scrollbar-hide px-4 md:px-8">
-        <div className="flex  min-w-max pb-4">
-          {services.map((service) => (
+      {/* Auto-scrolling container */}
+      <div
+        ref={scrollRef}
+        className="overflow-x-hidden scrollbar-hide px-4 md:px-8"
+      >
+        <div className="flex gap-2 min-w-max ">
+          {duplicatedServices.map((service, index) => (
             <div
-              key={service.id}
-              className="flex-shrink-0 w-64 md:w-64 lg:w-76 group cursor-pointer"
+              key={`${service.id}-${index}`}
+              className="flex-shrink-0 w-52 md:w-72 group cursor-pointer"
             >
               <div className="rounded-2xl overflow-hidden">
                 {/* Image Container with fixed height */}
-                <div className="h-44 md:h-62 lg:h-70 flex items-center justify-center">
+                <div className="h-44 md:h-52 lg:h-60 flex items-center justify-center">
                   <img
                     src={service.image}
                     alt={service.title}
@@ -60,7 +102,7 @@ export default function ServiceDisplay() {
                 </div>
 
                 {/* Title */}
-                <div className=" py-4 px-6">
+                <div className="py-4 px-6">
                   <h3 className="text-white font-bold text-center text-sm md:text-base lg:text-lg tracking-wider">
                     {service.title}
                   </h3>
@@ -69,26 +111,6 @@ export default function ServiceDisplay() {
             </div>
           ))}
         </div>
-      </div>
-
-      {/* Mobile scroll indicator */}
-      <div className="md:hidden text-center">
-        <p className="text-gray-400 text-sm flex items-center justify-center gap-2">
-          <span>Swipe to see more</span>
-          <svg
-            className="w-4 h-4"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M17 8l4 4m0 0l-4 4m4-4H3"
-            />
-          </svg>
-        </p>
       </div>
 
       <style jsx>{`

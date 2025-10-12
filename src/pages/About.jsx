@@ -60,7 +60,7 @@ const About = () => {
         {/* ===== Our Story Section ===== */}
         <div className="max-w-5xl mx-auto px-6 py-16 text-center">
           <h3 className="text-3xl md:text-4xl font-semibold mb-6">
-            OUR <span className="text-red-600 font-bold">STORY</span>
+            OUR <span className="text-redShade font-bold">STORY</span>
           </h3>
           <div className="w-20 h-[2px] bg-gray-400 mx-auto mb-10"></div>
 
@@ -109,7 +109,7 @@ const About = () => {
         {/* ===== Our Clients Section ===== */}
         <div className="bg-gray-100 py-16 px-6 text-center">
           <h3 className="text-3xl md:text-4xl font-semibold mb-6">
-            OUR <span className="text-red-600 font-bold">CLIENTS</span>
+            OUR <span className="text-redShade font-bold">CLIENTS</span>
           </h3>
           <div className="w-20 h-[2px] bg-gray-400 mx-auto mb-10"></div>
 

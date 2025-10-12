@@ -3,11 +3,11 @@ import KeyProducts from "../components/KeyProducts";
 export default function Products() {
   return (
     <section className="bg-[#eaeaea]">
-      <div className="bg-[#f8fcff] shadow-lg shadow-black/10 ">
-        <div className=" mx-auto md:px-19  pt-12 text-center md:text-left flex flex-col md:flex-row items-center gap-10">
+      <div className="bg-[#f8fcff] shadow-lg shadow-black/10 px-3">
+        <div className=" mx-auto lg:px-19  pt-12 text-center md:text-left flex flex-col md:flex-row items-center gap-10">
           {/* Left: Heading */}
           <div className="flex flex-col gap-y-3.5 md:w-1/3">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl text-nowrap">
               <span className="">OUR</span>{" "}
               <span className="bg-black font-bold text-white px-3 py-1">
                 PRODUCTS

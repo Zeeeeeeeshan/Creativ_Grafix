@@ -93,13 +93,13 @@ export default function DiwaliCarousel() {
                   <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white leading-tight">
                     {slide.title}
                   </h2>
-                  <p className="text-2xl sm:text-3xl lg:text-4xl text-amber-300 font-semibold mb-4 sm:mb-6 text-nowrap">
+                  <p className="text-2xl sm:text-3xl lg:text-4xl text-white font-semibold mb-4 sm:mb-6 text-nowrap">
                     {slide.subtitle}
                   </p>
                   <p className="text-base sm:text-lg lg:text-xl text-gray-200 mb-6 sm:mb-8 whitespace-pre-line leading-relaxed">
                     {slide.description}
                   </p>
-                  <button className="bg-white text-red-700 px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-bold text-sm sm:text-base hover:bg-red-600 hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105">
+                  <button className="bg-white text-redShade px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-bold text-sm sm:text-base hover:bg-redShade hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105">
                     {slide.buttonText}
                   </button>
                 </div>
@@ -116,7 +116,7 @@ export default function DiwaliCarousel() {
               onClick={() => goToSlide(index)}
               className={`transition-all duration-300 rounded-full border-2 ${
                 index === currentSlide
-                  ? "bg-red-600 border-white w-10 h-3"
+                  ? "bg-redShade border-white w-10 h-3"
                   : "bg-white/40 border-white/60 w-3 h-3 hover:bg-white/60"
               }`}
               aria-label={`Go to slide ${index + 1}`}

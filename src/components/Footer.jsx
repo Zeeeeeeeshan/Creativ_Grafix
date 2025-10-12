@@ -22,30 +22,30 @@ const Footer = () => {
 
         {/* Quick Links */}
         <div className="hidden md:block">
-          <h3 className="text-red-600 font-semibold mb-3">Quick Links</h3>
+          <h3 className="text-redShade font-semibold mb-3">Quick Links</h3>
           <ul className="space-y-2 text-sm list-disc ml-7">
             <li>
-              <Link to="/" className="hover:text-red-500">
+              <Link to="/" className="hover:text-redShade">
                 Home
               </Link>
             </li>
             <li>
-              <Link to="/about" className="hover:text-red-500">
+              <Link to="/about" className="hover:text-redShade">
                 About Us
               </Link>
             </li>
             <li>
-              <Link to="/services" className="hover:text-red-500">
+              <Link to="/services" className="hover:text-redShade">
                 Our Services
               </Link>
             </li>
             <li>
-              <Link to="/portfolio" className="hover:text-red-500">
+              <Link to="/portfolio" className="hover:text-redShade">
                 Our Portfolio
               </Link>
             </li>
             <li>
-              <Link to="/contact" className="hover:text-red-500">
+              <Link to="/contact" className="hover:text-redShade">
                 Contact Us
               </Link>
             </li>
@@ -54,7 +54,7 @@ const Footer = () => {
 
         {/* Our Services */}
         <div className="hidden md:block">
-          <h3 className="text-red-600 font-semibold mb-3">Our Services</h3>
+          <h3 className="text-redShade font-semibold mb-3">Our Services</h3>
           <ul className="space-y-2 text-sm list-disc ml-7">
             <li>Business Cards</li>
             <li>Brochures & Flyers</li>
@@ -66,7 +66,7 @@ const Footer = () => {
 
         {/* Contact Us */}
         <div>
-          <h3 className="text-red-600 font-semibold mb-3">Contact Us</h3>
+          <h3 className="text-redShade font-semibold mb-3">Contact Us</h3>
           <ul className="space-y-3 text-sm">
             <li className="flex items-center gap-2">
               <img src="/FooterMail.svg" alt="mail" className="w-4 h-4" />

@@ -7,7 +7,7 @@ export default function Contact() {
         <div className=" mx-auto md:px-19  pt-12 text-center md:text-left flex flex-col md:flex-row items-center gap-10">
           {/* Left: Heading */}
           <div className="flex flex-col gap-y-3.5 md:w-1/3">
-            <h2 className="text-2xl md:text-3xl lg:text-5xl">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl text-nowrap">
               <span className="bg-black font-bold text-white px-3 py-1">
                 CONTACT
               </span>{" "}
@@ -28,7 +28,7 @@ export default function Contact() {
       <div className="w-full relative">
         <img src="/ContactMap.svg" alt="" className="w-full object-contain" />
         <div className="lg:absolute flex flex-col gap-y-3 lg:w-1/4 py-8 px-5 bg-white top-15 left-20 shadow-xl shadow-black/30">
-          <h2 className="text-red-500 text-3xl font-semibold">Get in Touch</h2>
+          <h2 className="text-redShade text-3xl font-semibold">Get in Touch</h2>
           <p className="">
             We're here to answer any questions you may have. Reach out to us and
             we'll respond as soon as we can.
@@ -37,25 +37,25 @@ export default function Contact() {
             <input
               type="text"
               placeholder="Entre Your Name"
-              className="border border-red-500 p-1.5"
+              className="border border-redShade p-1.5"
             />
             <input
               type="text"
               placeholder="Enter Your E-mail ID"
-              className="border border-red-500 p-1.5"
+              className="border border-redShade p-1.5"
             />
             <input
               type="text"
               placeholder="Enter Your Mobile Number"
-              className="border border-red-500 p-1.5"
+              className="border border-redShade p-1.5"
             />
             <textarea
               name=""
               id=""
               placeholder="Enter Your Message"
-              className="border border-red-500 p-1.5"
+              className="border border-redShade p-1.5"
             ></textarea>
-            <button type="submit" className="bg-red-500 text-white py-2">Submit</button>
+            <button type="submit" className="bg-redShade text-white py-2">Submit</button>
           </form>
         </div>
       </div>

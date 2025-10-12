@@ -6,6 +6,11 @@ export default function Navbar() {
 
   const navLinks = [
     {
+      icon: "/NavHome.png",
+      name: "HOME",
+      path: "/",
+    },
+    {
       icon: "/NavAbout.svg",
       name: "ABOUT",
       path: "/about",
@@ -29,8 +34,22 @@ export default function Navbar() {
 
   return (
     <>
-      <div className="h-20"></div>
+      <div className="h-25"></div>
       <div className="w-full font-anta fixed top-0 z-50">
+        <div className="flex flex-col sm:flex-row items-center justify-evenly bg-[#333333] text-gray-200 py-1">
+          <div className="flex">
+            <img src="/NavbarWhatsApp.svg" alt="" className="mr-2 " />
+            939227180
+          </div>
+          <div className="text-xs md:text-lg">
+            Diwali Sale: <b>FLAT 10% off</b>, save upto ₹1000! Use code{" "}
+            <span className="text-red-700">DIWALI10</span>
+          </div>
+          <div className="hidden lg:flex">
+            <img src="/NavbarClock.svg" alt="" />
+            Mon-Sat: 9 AM - 9 PM
+          </div>
+        </div>
         {/* Desktop Navbar */}
         <div className="bg-grayShade w-full border-b-2 border-b-redShade relative flex">
           {/* Logo */}
@@ -64,27 +83,13 @@ export default function Navbar() {
                   <img
                     src={link.icon}
                     alt={`${link.name} icon`}
-                    className="w-5 h-5"
+                    className={`${link.name == "HOME" ? "w-4 h-4" : "w-5 h-5"}`}
                   />
                   <span className="text-sm xl:text-base">{link.name}</span>
                 </NavLink>
               ))}
             </nav>
             <div className="hidden xl:block"></div>
-
-            <div className="flex items-center gap-x-3">
-              <div className="flex items-center gap-x-1.5 cursor-pointer hover:text-redShade transition-colors">
-                <img src="/NavCart.svg" alt="Cart" className="w-5 h-5" />
-                <span className="text-sm xl:text-base">CART</span>
-                <span className="px-1.5 bg-redShade rounded-full text-white text-xs xl:text-sm">
-                  0
-                </span>
-              </div>
-              <button className="flex items-center gap-x-1.5 px-3 py-1.5 border-[1.5px] border-redShade hover:bg-redShade hover:text-white transition-colors text-sm xl:text-base">
-                <img src="/NavLogin.svg" alt="Login" className="w-5 h-5" />
-                LOG IN
-              </button>
-            </div>
           </div>
 
           {/* Mobile/Tablet Navigation */}

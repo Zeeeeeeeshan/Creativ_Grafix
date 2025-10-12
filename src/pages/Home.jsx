@@ -28,13 +28,13 @@ export default function Home() {
   ];
   return (
     <section>
-      <div className="flex flex-col md:flex-row justify-around w-full p-8 mt-5">
-        <div className="md:w-2/3">
+      <div className="flex flex-col lg:flex-row justify-around w-full p-8 mt-5">
+        <div className="lg:w-2/3">
           <DiwaliCarousel />
         </div>
-        <div className="rounded-4xl bg-grayShade md:w-2/7 mt-4 md:mt-0 px-6 py-8 flex flex-col gap-y-7">
+        <div className="rounded-4xl bg-grayShade lg:w-2/7 mt-4 lg:mt-0 px-6 py-8 flex flex-col gap-y-7">
           <h1 className="text-3xl">
-            OUT <span className="text-red-600 font-bold">STORY</span>
+            OUT <span className="text-redShade font-bold">STORY</span>
           </h1>
           <p>
             At <b>Creativ Grafix</b>, we believe every print tells a story.
@@ -47,7 +47,7 @@ export default function Home() {
             Bazar, we are known for our dedication, honesty, and commitment to
             delivering printing services that exceed expectations.
           </p>
-          <Link to="/about" className="text-red-600 flex items-center gap-2.5">
+          <Link to="/about" className="text-redShade flex items-center gap-2.5">
             More About us <img src="/HomeArrow.svg" alt="" />
           </Link>
         </div>
@@ -56,14 +56,14 @@ export default function Home() {
       <div>
         <div className="flex justify-center items-center flex-col py-8">
           <h1 className="text-3xl">
-            OUR KEY <span className="font-bold text-red-500">PRODUCTS</span>
+            OUR KEY <span className="font-bold text-redShade">PRODUCTS</span>
           </h1>
           <span className="border-2 border-black w-1/12 mt-2"></span>
         </div>
 
-        <KeyProducts  />
+        <KeyProducts />
         <div className="text-center mb-3">
-          <Link to="/products" className="border-b-red-500 border-b">
+          <Link to="/products" className="border-b-redShade border-b">
             View All Products
           </Link>
         </div>
@@ -71,7 +71,7 @@ export default function Home() {
       <div className="bg-[#222222] flex flex-col gap-y-8 py-8">
         <div className="flex justify-center items-center flex-col">
           <h1 className="text-3xl font-bold text-white">
-            OUR <span className="text-red-500">TOP CLIENT</span>
+            OUR <span className="text-redShade">TOP CLIENT</span>
           </h1>
           <span className="border-2 border-white w-1/12 mt-3"></span>
         </div>
