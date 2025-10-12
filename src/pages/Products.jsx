@@ -7,7 +7,7 @@ export default function Products() {
         <div className=" mx-auto md:px-19  pt-12 text-center md:text-left flex flex-col md:flex-row items-center gap-10">
           {/* Left: Heading */}
           <div className="flex flex-col gap-y-3.5 md:w-1/3">
-            <h2 className="text-2xl md:text-3xl lg:text-5xl">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl">
               <span className="">OUR</span>{" "}
               <span className="bg-black font-bold text-white px-3 py-1">
                 PRODUCTS

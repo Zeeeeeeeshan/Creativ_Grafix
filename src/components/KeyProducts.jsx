@@ -62,7 +62,7 @@ export default function KeyProducts({ color }) {
         </div>
       </div>
       <div
-        className={`w-full h-100 bg-${color ? `bg-${color}` : `red-200`}`}
+        className={`w-full h-100 bg-${color ? `${color}` : `red-200`}`}
       ></div>
     </div>
   );
