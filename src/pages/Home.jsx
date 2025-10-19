@@ -118,13 +118,13 @@ export default function Home() {
             {reviews.map((r, i) => (
               <div
                 key={i}
-                className="px-6 py-5 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300 bg-white"
+                className="px-6 py-5 rounded-2xl shadow-lg bg-redShade border border-gray-100 hover:shadow-xl transition-shadow duration-300"
               >
                 <div className="border-b border-gray-300 pb-2 mb-2">
-                  <h4 className="text-gray-800 font-medium">{r.name}</h4>
+                  <h4 className="text-white font-medium">{r.name}</h4>
                 </div>
 
-                <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                <p className="text-gray-100 text-sm leading-relaxed mb-4">
                   {r.review}
                 </p>
                 <div className="flex justify-between items-center gap-1 mb-3 text-yellow-400">
