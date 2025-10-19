@@ -149,13 +149,13 @@ export default function KeyProducts({ color }) {
         className={`w-full py-10 bg-${color ? color : "red-50"} rounded-b-2xl`}
       >
         {selectedData.length > 0 ? (
-          <div className="flex flex-wrap justify-center gap-4">
+          <div className="flex flex-wrap justify-center gap-2">
             {selectedData.map((src, index) => (
               <img
                 key={index}
                 src={src}
                 alt={`${selectedProduct} ${index + 1}`}
-                className="h-55 rounded-xl bg-gray-200 shadow-md hover:scale-105 transition-transform duration-200"
+                className="h-55 rounded-xl p-2 bg-gray-200 shadow-md hover:scale-105 transition-transform duration-200"
               />
             ))}
           </div>

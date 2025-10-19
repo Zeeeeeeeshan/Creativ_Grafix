@@ -88,8 +88,8 @@ export default function Home() {
       </div>
       <div className="bg-[#800000] px-7 py-12">
         <div className="flex justify-center items-center flex-col mb-13">
-          <h1 className="text-3xl text-white">
-            GOOGLE <span className="font-bold">REVIEWS</span>
+          <h1 className="text-xl md:text-3xl text-white">
+            GOOGLE <span className="font-bold">REVIEWS</span> PLUGIN
           </h1>
           <span className="border-2 border-white w-1/12 mt-3"></span>
         </div>

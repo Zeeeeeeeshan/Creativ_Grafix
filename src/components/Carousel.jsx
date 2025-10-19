@@ -53,7 +53,7 @@ export default function DiwaliCarousel() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 4000);
+    }, 9000);
 
     return () => clearInterval(interval);
   }, [slides.length]);

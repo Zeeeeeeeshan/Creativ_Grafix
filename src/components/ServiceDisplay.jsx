@@ -50,7 +50,7 @@ export default function ServiceDisplay() {
 
     let animationId;
     let scrollPosition = 0;
-    const scrollSpeed = 0.5; // Adjust speed (lower = slower, higher = faster)
+    const scrollSpeed = 0.3; // Adjust speed (lower = slower, higher = faster)
 
     const animate = () => {
       scrollPosition += scrollSpeed;
@@ -85,11 +85,11 @@ export default function ServiceDisplay() {
         ref={scrollRef}
         className="overflow-x-hidden scrollbar-hide px-4 md:px-8"
       >
-        <div className="flex gap-2 min-w-max ">
+        <div className="flex ">
           {duplicatedServices.map((service, index) => (
             <div
               key={`${service.id}-${index}`}
-              className="flex-shrink-0 w-52 md:w-72 group cursor-pointer"
+              className="flex-shrink-0 w-45 md:w-64 group cursor-pointer"
             >
               <div className="rounded-2xl overflow-hidden">
                 {/* Image Container with fixed height */}
