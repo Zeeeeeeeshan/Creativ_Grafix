@@ -28,6 +28,9 @@ export default function Home() {
   ];
   return (
     <section>
+        <div className="w-full">
+          <img src="/Banner.png" alt="" />
+        </div>
       <div className="flex flex-col lg:flex-row justify-around w-full p-8 mt-5">
         <div className="lg:w-2/3">
           <DiwaliCarousel />
