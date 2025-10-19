@@ -3,7 +3,27 @@ import DiwaliCarousel from "../components/Carousel";
 import ServiceDisplay from "../components/ServiceDisplay";
 import KeyProducts from "../components/KeyProducts";
 import CTA from "../components/CTA";
+import { Star } from "lucide-react";
+
 export default function Home() {
+  const reviews = [
+    {
+      name: "Aarav Sharma",
+      review:
+        "Creativ Grafix delivers top-quality designs and prints every time – clean, modern, and exactly what we need!",
+    },
+    {
+      name: "Priya Patel",
+      review:
+        "From business cards to packaging, Creativ Grafix always nails it with quality and creativity.",
+    },
+    {
+      name: "Rahul Verma",
+      review:
+        "Professional, reliable, and super creative – Creativ Grafix is our most trusted printing partner.",
+    },
+  ];
+
   const stats = [
     {
       icon: "/AboutHappyClients2.svg",
@@ -28,9 +48,6 @@ export default function Home() {
   ];
   return (
     <section>
-        <div className="w-full">
-          <img src="/Banner.png" alt="" />
-        </div>
       <div className="flex flex-col lg:flex-row justify-around w-full p-8 mt-5">
         <div className="lg:w-2/3">
           <DiwaliCarousel />
@@ -92,17 +109,36 @@ export default function Home() {
       <div className="bg-[#800000] px-7 py-12">
         <div className="flex justify-center items-center flex-col mb-13">
           <h1 className="text-xl md:text-3xl text-white">
-            GOOGLE <span className="font-bold">REVIEWS</span> PLUGIN
+            GOOGLE <span className="font-bold">REVIEWS</span>
           </h1>
-          <span className="border-2 border-white w-1/12 mt-3"></span>
+          <span className="border-2 border-white w-1/12"></span>
         </div>
-        <div className="flex overflow-x-auto scrollbar-hide justify-center">
-          <div className="flex justify-evenly items-center gap-x-4">
-            <img src="/HomeReviewCard1.svg" alt="" />
-            <img src="/HomeReviewCard2.svg" alt="" />
-            <img src="/HomeReviewCard3.svg" alt="" />
+        <section className="px-4 md:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {reviews.map((r, i) => (
+              <div
+                key={i}
+                className="px-6 py-5 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300 bg-white"
+              >
+                <div className="border-b border-gray-300 pb-2 mb-2">
+                  <h4 className="text-gray-800 font-medium">{r.name}</h4>
+                </div>
+
+                <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                  {r.review}
+                </p>
+                <div className="flex justify-between items-center gap-1 mb-3 text-yellow-400">
+                  <div className="flex items-center gap-1">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="w-5 h-5 fill-yellow-400" />
+                    ))}
+                  </div>
+                  <img src="/GoogleLogo.png" alt="" className="h-8" />
+                </div>
+              </div>
+            ))}
           </div>
-        </div>
+        </section>
       </div>
       <CTA />
       <div className="bg-[#eeeeee] py-12">

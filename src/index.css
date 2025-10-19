@@ -18,3 +18,17 @@ body {
 .font-anta {
   font-family: "Anta", sans-serif;
 }
+
+@keyframes scroll-right {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.animate-scroll-right {
+  display: inline-flex;
+  animation: scroll-right 10s linear infinite;
+}

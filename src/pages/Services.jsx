@@ -360,6 +360,24 @@ export default function Services() {
           </div>
         </div>
       </div>
+      <div className="relative overflow-hidden bg-redShade py-4">
+        {/* Gradient overlays for smooth fade edges */}
+        <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-redShade to-transparent z-10"></div>
+        <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-redShade to-transparent z-10"></div>
+
+        {/* Animation container */}
+        <div className="flex whitespace-nowrap animate-scroll-right">
+          {/* Duplicate the logo multiple times for continuous loop */}
+          {Array.from({ length: 12 }).map((_, i) => (
+            <img
+              key={i}
+              src="/FooterLogo.svg"
+              alt="Company Logo"
+              className="mx-8 opacity-90 hover:opacity-100 transition-opacity"
+            />
+          ))}
+        </div>
+      </div>
       <div className="w-full flex flex-col items-center justify-start text-center px-8 py-16 bg-[#eeeeee]">
         <h1 className="text-2xl md:text-3xl lg:text-4xl">
           <span className="font-bold text-redShade">BUSINESS</span> PRINTING
