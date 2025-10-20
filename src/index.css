@@ -30,5 +30,5 @@ body {
 
 .animate-scroll-right {
   display: inline-flex;
-  animation: scroll-right 10s linear infinite;
+  animation: scroll-right 18s linear infinite;
 }

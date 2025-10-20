@@ -34,7 +34,7 @@ export default function Navbar() {
 
   return (
     <>
-      <div className="h-25"></div>
+      <div className="h-28"></div>
       <div className="w-full font-anta fixed top-0 z-50">
         <div className="flex flex-col sm:flex-row items-center justify-evenly bg-[#333333] text-gray-200 py-1">
           <div className="flex">
@@ -118,7 +118,6 @@ export default function Navbar() {
                 }`}
               ></span>
             </button>
-            
           </div>
         </div>
 
