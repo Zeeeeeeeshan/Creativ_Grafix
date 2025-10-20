@@ -387,11 +387,11 @@ export default function Services() {
         <span className="border-2 w-1/12 mt-4"></span>
         <div className="flex flex-wrap gap-y-5 mt-8 w-full">
           {BusinessServices.map((service, index) => (
-            <div className="flex flex-col md:flex-row justify-center items-center w-full gap-10">
+            <div className="flex flex-col md:flex-row justify-center md:items-center w-full gap-10">
               <div className="">
                 <img src={service.image} alt="" className="h-56 " />
               </div>
-              <div className="w-3/5 flex flex-col justify-center items-start gap-y-2">
+              <div className="md:w-3/5 flex flex-col justify-center items-start gap-y-2">
                 <h1 className="text-2xl md:text-3xl text-start text-redShade font-bold">
                   {service.title}
                 </h1>
