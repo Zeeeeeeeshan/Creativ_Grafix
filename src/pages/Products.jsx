@@ -29,7 +29,9 @@ export default function Products() {
           </div>
         </div>
       </div>
-      <KeyProducts color={"white"} />
+      <div className="py-5">
+        <KeyProducts color={"white"} />
+      </div>
       <CTA />
     </section>
   );

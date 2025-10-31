@@ -340,16 +340,11 @@ export default function Services() {
           <div className="absolute bottom-0 w-full bg-[#5f6164] h-1/2 border-t-2 border-white"></div>
 
           {/* Animation container */}
-          <div className="flex whitespace-nowrap animate-scroll-right">
-            {/* Duplicate the logo multiple times for continuous loop */}
-            {Array.from({ length: 48 }).map((_, i) => (
-              <img
-                key={i}
-                src="/Banner1.png"
-                alt="Company Logo"
-                className="mx-8"
-              />
-            ))}
+          <div className="flex whitespace-nowrap">
+            {/* Banner Animation */}
+            <marquee behavior="" direction="right">
+              <img src="/Banner1.png" alt="Company Logo" className="mx-8 " />
+            </marquee>
           </div>
         </div>
         <div className=" mx-auto lg:px-19  pt-12 text-center md:text-left flex flex-col md:flex-row items-center gap-10">

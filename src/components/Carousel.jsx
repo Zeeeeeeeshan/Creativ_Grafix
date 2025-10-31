@@ -5,6 +5,14 @@ export default function DiwaliCarousel() {
 
   const slides = [
     {
+      id: 0,
+      title: "",
+      subtitle: "",
+      description: "",
+      buttonText: "",
+      image: "/HomeCarousel6.png",
+    },
+    {
       id: 1,
       title: "Custom Printing",
       subtitle: "For this Diwali",
@@ -47,14 +55,6 @@ export default function DiwaliCarousel() {
         "From Visiting Cards to Receipts - \nEverything Your Business Needs, \nPrinted Prefectly.",
       buttonText: "EXPLORE PRODUCTS",
       image: "/HomeCarousel5.svg",
-    },
-    {
-      id: 6,
-      title: "",
-      subtitle: "",
-      description: "",
-      buttonText: "",
-      image: "/HomeCarousel6.png",
     },
   ];
 

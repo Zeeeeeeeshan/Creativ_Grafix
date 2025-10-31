@@ -120,7 +120,7 @@ export default function KeyProducts({ color }) {
     ProductData.find((p) => p.name === selectedProduct)?.items || [];
 
   return (
-    <div className="px-3 md:px-25 py-15">
+    <div className="px-3 md:px-15 ">
       {/* Top Scrollable Tabs */}
       <div className="flex overflow-x-scroll scrollbar-hide">
         <div className="flex gap-x-3">

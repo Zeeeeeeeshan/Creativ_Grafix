@@ -34,18 +34,15 @@ export default function Navbar() {
 
   return (
     <>
-      <div className="h-28"></div>
+      <div className="h-30 md:h-26"></div>
       <div className="w-full font-anta fixed top-0 z-50">
-        <div className="flex flex-col sm:flex-row items-center justify-evenly bg-[#333333] text-gray-200 py-1">
+        <div className="flex flex-col sm:flex-row items-center justify-between px-5.5 bg-[#333333] text-gray-200 py-1">
           <div className="flex">
             <img src="/NavbarWhatsApp.svg" alt="" className="mr-2 " />
-            939227180
+            9100011660
           </div>
-          <div className="text-xs md:text-lg">
-            Diwali Sale: <b>FLAT 10% off</b>, save upto ₹1000! Use code{" "}
-            <span className="text-red-700">DIWALI10</span>
-          </div>
-          <div className="hidden lg:flex">
+
+          <div className="flex gap-x-1">
             <img src="/NavbarClock.svg" alt="" />
             Mon-Sat: 9 AM - 9 PM
           </div>
@@ -151,12 +148,6 @@ export default function Navbar() {
                 <span className="text-base">{link.name}</span>
               </NavLink>
             ))}
-            <div className="border-t border-gray-200 py-4 px-6">
-              <button className="w-full flex items-center justify-center gap-x-2 px-4 py-3 border-[1.5px] border-redShade hover:bg-redShade hover:text-white transition-colors">
-                <img src="/NavLogin.svg" alt="Login" className="w-5 h-5" />
-                LOG IN
-              </button>
-            </div>
           </nav>
         </div>
       </div>

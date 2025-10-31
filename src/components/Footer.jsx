@@ -97,14 +97,14 @@ const Footer = () => {
 
           <div className="flex items-center gap-6 mt-3 sm:mt-0">
             <Link
-              to="/privacy"
+              to="/"
               className="flex items-center gap-2 hover:text-red-500"
             >
               <img src="/FooterPrivacy.svg" alt="privacy" className="w-4 h-4" />
               Privacy Policy
             </Link>
             <Link
-              to="/terms"
+              to="/"
               className="flex items-center gap-2 hover:text-red-500"
             >
               <img src="/FooterTerms.svg" alt="terms" className="w-4 h-4" />
