@@ -48,6 +48,14 @@ export default function DiwaliCarousel() {
       buttonText: "EXPLORE PRODUCTS",
       image: "/HomeCarousel5.svg",
     },
+    {
+      id: 6,
+      title: "",
+      subtitle: "",
+      description: "",
+      buttonText: "",
+      image: "/HomeCarousel6.png",
+    },
   ];
 
   useEffect(() => {

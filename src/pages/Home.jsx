@@ -48,7 +48,7 @@ export default function Home() {
   ];
   return (
     <section>
-      <div className="flex flex-col lg:flex-row justify-around w-full p-8 mt-5">
+      <div className="flex flex-col lg:flex-row justify-around w-full py-8 px-4 mt-5">
         <div className="lg:w-2/3">
           <DiwaliCarousel />
         </div>
@@ -75,18 +75,16 @@ export default function Home() {
       <ServiceDisplay />
       <div className="relative overflow-hidden bg-redShade py-4">
         {/* Gradient overlays for smooth fade edges */}
-        <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-redShade to-transparent z-10"></div>
-        <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-redShade to-transparent z-10"></div>
-
+        <div className="absolute bottom-0 w-full bg-[#5f6164] h-1/2 border-t-2 border-white"></div>
         {/* Animation container */}
         <div className="flex whitespace-nowrap animate-scroll-right">
           {/* Duplicate the logo multiple times for continuous loop */}
-          {Array.from({ length: 52 }).map((_, i) => (
+          {Array.from({ length: 48 }).map((_, i) => (
             <img
               key={i}
-              src="/FooterLogo.svg"
+              src="/Banner1.png"
               alt="Company Logo"
-              className="mx-8 opacity-90 hover:opacity-100 transition-opacity"
+              className="mx-8 "
             />
           ))}
         </div>

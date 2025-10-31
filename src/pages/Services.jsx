@@ -337,18 +337,17 @@ export default function Services() {
       <div className="bg-[#f8fcff] shadow-lg shadow-black/10 ">
         <div className="relative overflow-hidden bg-redShade py-4">
           {/* Gradient overlays for smooth fade edges */}
-          <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-redShade to-transparent z-10"></div>
-          <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-redShade to-transparent z-10"></div>
+          <div className="absolute bottom-0 w-full bg-[#5f6164] h-1/2 border-t-2 border-white"></div>
 
           {/* Animation container */}
           <div className="flex whitespace-nowrap animate-scroll-right">
             {/* Duplicate the logo multiple times for continuous loop */}
-            {Array.from({ length: 52 }).map((_, i) => (
+            {Array.from({ length: 48 }).map((_, i) => (
               <img
                 key={i}
-                src="/FooterLogo.svg"
+                src="/Banner1.png"
                 alt="Company Logo"
-                className="mx-8 opacity-90 hover:opacity-100 transition-opacity"
+                className="mx-8"
               />
             ))}
           </div>
@@ -385,7 +384,7 @@ export default function Services() {
           SERVICES
         </h1>
         <span className="border-2 w-1/12 mt-4"></span>
-        <div className="flex flex-wrap gap-y-5 mt-8 w-full">
+        <div id="business-card" className="flex flex-wrap gap-y-5 mt-8 w-full">
           {BusinessServices.map((service, index) => (
             <div className="flex flex-col md:flex-row justify-center md:items-center w-full gap-10">
               <div className="">

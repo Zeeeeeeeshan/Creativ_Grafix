@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function KeyProducts({ color }) {
   const products = [
@@ -151,12 +152,14 @@ export default function KeyProducts({ color }) {
         {selectedData.length > 0 ? (
           <div className="flex flex-wrap justify-center gap-2">
             {selectedData.map((src, index) => (
-              <img
-                key={index}
-                src={src}
-                alt={`${selectedProduct} ${index + 1}`}
-                className="h-55 rounded-xl p-2 bg-gray-200 shadow-md hover:scale-105 transition-transform duration-200"
-              />
+              <Link to={"/services"} key={index}>
+                <img
+                  key={index}
+                  src={src}
+                  alt={`${selectedProduct} ${index + 1}`}
+                  className="h-55 rounded-xl p-2 bg-gray-200 shadow-md hover:scale-105 transition-transform duration-200"
+                />
+              </Link>
             ))}
           </div>
         ) : (
