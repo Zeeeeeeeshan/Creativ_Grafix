@@ -72,7 +72,7 @@ export default function ServiceDisplay() {
   }, []);
 
   return (
-    <section className="bg-[#222222] flex flex-col py-10 gap-y-7 w-full overflow-hidden">
+    <section className="bg-[#222222] flex flex-col py-10 gap-y-7 w-full rounded-t overflow-hidden">
       <div className="flex flex-col justify-center items-center">
         <h1 className="text-white text-2xl md:text-3xl lg:text-4xl">
           OUR <span className="font-bold text-redShade">SERVICES</span>

@@ -48,11 +48,11 @@ export default function Home() {
   ];
   return (
     <section>
-      <div className="flex flex-col lg:flex-row justify-around w-full py-8 px-4 mt-5">
+      <div className="flex flex-col lg:flex-row justify-between gap-x-6 w-full py-8 mt-5">
         <div className="lg:w-2/3">
           <DiwaliCarousel />
         </div>
-        <div className="rounded-4xl bg-grayShade lg:w-2/7 mt-4 lg:mt-0 px-6 py-8 flex flex-col gap-y-7">
+        <div className="rounded-4xl bg-grayShade lg:w-1/3 mt-4 lg:mt-0 px-6 py-8 flex flex-col gap-y-7">
           <h1 className="text-3xl">
             OUT <span className="text-redShade font-bold">STORY</span>
           </h1>
@@ -85,7 +85,7 @@ export default function Home() {
         </div>
       </div>
       <div>
-        <div className="flex justify-center items-center flex-col py-8">
+        <div className="flex justify-center items-center flex-col py-8 ">
           <h1 className="text-3xl">
             OUR KEY <span className="font-bold text-redShade">PRODUCTS</span>
           </h1>
@@ -99,7 +99,7 @@ export default function Home() {
           </Link>
         </div>
       </div>
-      <div className="bg-[#222222] flex flex-col gap-y-8 py-8">
+      <div className="bg-[#222222] flex flex-col gap-y-8 py-8 px-4 rounded-t">
         <div className="flex justify-center items-center flex-col">
           <h1 className="text-3xl font-bold text-white">
             OUR <span className="text-redShade">TOP CLIENT</span>
