@@ -26,8 +26,8 @@ const About = () => {
   const clients = [
     "/clients/client1.png",
     "/clients/client2.png",
-    "/clients/client3.png",
-    "/clients/client4.png",
+    "/clients/client3.jpeg",
+    "/clients/client4.avif",
     "/clients/client5.png",
   ];
   return (
@@ -59,31 +59,148 @@ const About = () => {
 
         {/* ===== Our Story Section ===== */}
         <div className="max-w-5xl mx-auto px-6 py-16 text-center">
-          <h3 className="text-3xl md:text-4xl font-semibold mb-6">
-            OUR <span className="text-redShade font-bold">STORY</span>
+          <h3 className="text-3xl md:text-4xl font-semibold">
+            About{" "}
+            <span className="text-redShade font-bold">Creativ Grafix</span>
           </h3>
-          <div className="w-20 h-[2px] bg-gray-400 mx-auto mb-10"></div>
-
+          <h4 className="mb-6 text-xl font-semibold">
+            Shaping Imaginations. It All Starts Here.
+          </h4>
+          <h3 className="text-xl font-semibold text-redShade">
+            Co-Founders - Naresh Bhatnagar & Mohammed Hameed Uddin{" "}
+          </h3>
           <div className="text-gray-700 space-y-6 text-sm md:text-base leading-relaxed">
             <p>
-              At Creativ Grafix, we believe that every printed material tells a
-              story. Founded with a vision to transform the printing industry in
-              Hyderabad, we have established ourselves as a beacon of quality
-              and reliability.
+              For over 25 years, Creativ Grafix has been the trusted name in
+              design, printing, and branding solutions across Hyderabad,
+              Secunderabad, and the Twin Cities. We are more than a printing
+              company — we are a creative powerhouse that blends design
+              excellence, print precision, and technological innovation to help
+              brands express their identity with impact.
             </p>
-
+          </div>
+          <div className="my-8">
+            <h2 className="text-2xl font-semibold">Our Journey</h2>
             <p>
-              Located in the heart of Hyderabad at Redhills, opposite Rupani
-              Apartments, we serve clients across Telangana with dedication and
-              expertise. Our journey began with a simple mission: to provide
-              unparalleled printing services that exceed customer expectations.
+              Founded with a simple idea — to make creativity accessible and
+              printing dependable — Creativ Grafix began as a small design
+              studio and has evolved into one of the{" "}
+              <b>
+                most respected end-to-end design and print companies in
+                Hyderabad.
+              </b>{" "}
+              From humble beginnings, we’ve grown through passion, innovation,
+              and a deep understanding of our clients’ visual communication
+              needs. Today, we proudly partner with leading brands, schools,
+              corporates, and entrepreneurs, delivering outstanding results that
+              stand the test of time.
             </p>
-
+          </div>
+          <div className="my-8">
+            <h2 className="text-2xl font-semibold">Our Vision</h2>
             <p>
-              Today, we stand proud as a unique presence in the printing markets
-              of Lakdikapul and Chatta Bazar, known for our commitment to
-              quality, responsibility, and complete honesty in every project we
-              undertake.
+              To be South India’s most innovative and dependable branding,
+              design, and printing company, where creativity and technology come
+              together to shape imaginations and empower every client’s
+              identity.
+            </p>
+          </div>
+          <div className="my-8">
+            <h2 className="text-2xl font-semibold">Our Mission</h2>
+            <p>
+              To deliver comprehensive, in-house design and print solutions that
+              combine art, technology, and expertise — enabling brands to
+              communicate with clarity, confidence, and creativity. At Creativ
+              Grafix, It All Starts Here — from the spark of an idea to the
+              final printed
+            </p>
+          </div>
+          <div className="my-8">
+            <h2 className="text-2xl font-semibold">Our Expertise and Team</h2>
+            <p>
+              Our biggest strength lies in our experienced designers, creative
+              strategists, and production specialists. Every member of our team
+              brings deep expertise, artistic vision, and technical mastery. We
+              specialize in logo design, brand identity creation, corporate
+              branding, institutional and school branding, customized
+              merchandise, and marketing collaterals — ensuring every project
+              reflects the client’s unique personality. Our designers are
+              trained to understand color psychology, typography, brand
+              storytelling, and modern layout techniques, transforming ideas
+              into visuals that captivate and connect. Their creativity, paired
+              with our print precision, ensures every piece carries the perfect
+              balance of art and functionality.
+            </p>
+          </div>
+          <div className="my-8">
+            <h2 className="text-2xl font-semibold">
+              Technology and Infrastructure
+            </h2>
+            <p>
+              Creativ Grafix houses a complete in-house printing setup, ensuring
+              speed, consistency, and uncompromised quality. Our facility
+              features advanced offset, digital, and large-format printing
+              machines, along with a dedicated post-press unit for lamination,
+              cutting, binding, foiling, embossing, and finishing — all done
+              under one roof. This complete control over production allows us to
+              handle everything — from logo creation to full-scale brand
+              roll-outs — efficiently, affordably, and with precision.
+            </p>
+          </div>
+          <div className="my-8">
+            <h2 className="text-2xl font-semibold">
+              Commitment to Quality and Service
+            </h2>
+            <p>
+              We believe that every design and print we produce is a reflection
+              of our client’s brand — and our craftsmanship. That’s why we
+              follow stringent quality checks at every stage of production. Our
+              goal is simple: deliver superior design and print outputs that
+              look beautiful, feel premium, and perform effectively. We combine
+              creativity, technical knowledge, and service excellence to provide
+              a smooth, satisfying experience every time.
+            </p>
+          </div>
+          <div className="my-8">
+            <h2 className="text-2xl font-semibold">
+              Customer-Centric Approach
+            </h2>
+            <p>
+              At Creativ Grafix, we treat every project — big or small — with
+              equal passion. Our team works closely with clients, offering
+              consultation, design direction, and printing expertise to bring
+              their vision to life. From{" "}
+              <b>
+                corporate identities to customized school branding and
+                personalized print materials,
+              </b>{" "}
+              we deliver everything with precision and pride.
+            </p>
+          </div>
+          <div className="my-8">
+            <h2 className="text-2xl font-semibold">
+              Experience the Creativ Grafix Difference
+            </h2>
+            <p>
+              With more than two decades of expertise, a strong local presence,
+              and a fully in-house setup, we remain the preferred choice for
+              <b>
+                {" "}
+                businesses seeking design, printing, and branding in Hyderabad.
+              </b>
+              Our combination of{" "}
+              <b>creativity, innovation, and craftsmanship</b>
+              ensures every client walks away with something exceptional —
+              because at Creativ Grafix,{" "}
+              <b>Shaping Imaginations is what we do best.</b>
+            </p>
+          </div>
+          <div>
+            <h3 className="text-2xl font-semibold text-redShade">
+              Creativ Grafix - Shaping Imaginations. It All Starts Here.
+            </h3>
+            <p className="text-xl ">
+              Design | Print | Brand | Deliver - All Under One Roof
             </p>
           </div>
         </div>
@@ -117,8 +234,10 @@ const About = () => {
             {clients.map((logo, index) => (
               <div
                 key={index}
-                className="bg-white shadow-md rounded-md py-20 flex items-center justify-center"
-              ></div>
+                className="bg-white shadow-md rounded-md overflow-hidden flex items-center justify-center"
+              >
+                <img src={logo} alt={`Client ${index + 1}`} />
+              </div>
             ))}
           </div>
         </div>

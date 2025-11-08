@@ -108,12 +108,41 @@ export default function Home() {
         </div>
         <div className="flex overflow-x-scroll scrollbar-hide">
           <div className="flex justify-center items-center gap-x-3.5">
-            <div className="h-70 w-70 bg-white rounded-3xl"></div>
-            <div className="h-70 w-70 bg-white rounded-3xl"></div>
-            <div className="h-70 w-70 bg-white rounded-3xl"></div>
-            <div className="h-70 w-70 bg-white rounded-3xl"></div>
-            <div className="h-70 w-70 bg-white rounded-3xl"></div>
-            <div className="h-70 w-70 bg-white rounded-3xl"></div>
+            <div className="h-70 w-70 bg-white rounded-3xl overflow-hidden">
+              <img
+                src="/clients/client1.png"
+                alt=""
+                className="w-full h-full object-contain"
+              />
+            </div>
+            <div className="h-70 w-70 bg-white rounded-3xl overflow-hidden">
+              <img
+                src="/clients/client2.png"
+                alt=""
+                className="w-full h-full object-contain"
+              />
+            </div>
+            <div className="h-70 w-70 bg-white rounded-3xl overflow-hidden">
+              <img
+                src="/clients/client3.jpeg"
+                alt=""
+                className="w-full h-full object-contain"
+              />
+            </div>
+            <div className="h-70 w-70 bg-white rounded-3xl overflow-hidden">
+              <img
+                src="/clients/client4.avif"
+                alt=""
+                className="w-full h-full object-contain"
+              />
+            </div>
+            <div className="h-70 w-70 bg-white rounded-3xl overflow-hidden">
+              <img
+                src="/clients/client5.png"
+                alt=""
+                className="w-full h-full object-contain"
+              />
+            </div>
           </div>
         </div>
       </div>
