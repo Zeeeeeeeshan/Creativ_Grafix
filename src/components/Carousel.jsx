@@ -10,51 +10,27 @@ export default function DiwaliCarousel() {
       subtitle: "",
       description: "",
       buttonText: "",
-      image: "/HomeCarousel6.png",
+      image: "/Carousel6.png",
     },
     {
       id: 1,
-      title: "Custom Printing",
-      subtitle: "For this Diwali",
-      description: "Frames, Calendars, Mugs\nGift Boxes, Banners & more",
-      buttonText: "EXPLORE PRODUCTS",
-      image: "/HomeCarousel1.svg",
+      image: "/Carousel1.png",
     },
     {
       id: 2,
-      title: "Top Selling Printing",
-      subtitle: "Products This Season!",
-      description:
-        "Our clients favorites - designed, \nprinted & delivered with perfection",
-      buttonText: "EXPLORE PRODUCTS",
-      image: "/HomeCarousel2.svg",
+      image: "/Carousel2.png",
     },
     {
       id: 3,
-      title: "Corporate Branding",
-      subtitle: "Solution That Speak for You",
-      description:
-        "From business cards to office branding -\nwe print your professional identity \n with perfection.",
-      buttonText: "EXPLORE PRODUCTS",
-      image: "/HomeCarousel3.svg",
+      image: "/Carousel3.png",
     },
     {
       id: 4,
-      title: "Printing Solutions for",
-      subtitle: "School & Colleges",
-      description:
-        "From ID Cards to Yearbooks - \nWe Print Memories That Last.",
-      buttonText: "EXPLORE PRODUCTS",
-      image: "/HomeCarousel4.svg",
+      image: "/Carousel4.png",
     },
     {
       id: 5,
-      title: "Customized Branding for",
-      subtitle: "Small & Medium Businesses",
-      description:
-        "From Visiting Cards to Receipts - \nEverything Your Business Needs, \nPrinted Prefectly.",
-      buttonText: "EXPLORE PRODUCTS",
-      image: "/HomeCarousel5.svg",
+      image: "/Carousel5.png",
     },
   ];
 

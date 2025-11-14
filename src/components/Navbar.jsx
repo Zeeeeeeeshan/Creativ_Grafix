@@ -75,7 +75,7 @@ export default function Navbar() {
         </div>
 
         {/* Center Logo Overlap */}
-        <div className="absolute top-[-20px] left-5 z-50">
+        <div className="absolute top-[-20px] left-2 md:left-8 z-50">
           <Link to="/" className="rounded-xl shadow-xl p-2">
             <img src="/Banner1.png" alt="logo" className="h-[110px] w-auto" />
           </Link>

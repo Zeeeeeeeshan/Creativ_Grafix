@@ -49,10 +49,10 @@ export default function Home() {
   return (
     <section>
       <div className="flex flex-col lg:flex-row justify-between gap-x-6 w-full py-8 mt-5">
-        <div className="lg:w-2/3">
+        <div className="lg:w-5/7">
           <DiwaliCarousel />
         </div>
-        <div className="rounded-4xl bg-grayShade lg:w-1/3 mt-4 lg:mt-0 px-6 py-8 flex flex-col gap-y-7">
+        <div className="rounded-4xl bg-grayShade lg:w-2/7 mt-4 lg:mt-0 px-6 py-8 flex flex-col gap-y-7">
           <h1 className="text-3xl">
             OUT <span className="text-redShade font-bold">STORY</span>
           </h1>
@@ -75,13 +75,19 @@ export default function Home() {
       <ServiceDisplay />
       <div className="relative overflow-hidden bg-redShade py-4">
         {/* Gradient overlays for smooth fade edges */}
-        <div className="absolute bottom-0 w-full bg-[#5f6164] h-1/2 border-t-2 border-white"></div>
+        <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-redShade to-transparent z-10"></div>
+        <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-redShade to-transparent z-10"></div>
         {/* Animation container */}
-        <div className="flex whitespace-nowrap">
-          {/* Banner Animation */}
-          <marquee behavior="" direction="right">
-            <img src="/Banner1.png" alt="Company Logo" className="mx-8 " />
-          </marquee>
+        <div className="flex whitespace-nowrap animate-scroll-right">
+          {/* Duplicate the logo multiple times for continuous loop */}
+          {Array.from({ length: 52 }).map((_, i) => (
+            <img
+              key={i}
+              src="/FooterLogo.svg"
+              alt="Company Logo"
+              className="mx-8 opacity-90 hover:opacity-100 transition-opacity"
+            />
+          ))}
         </div>
       </div>
       <div>
@@ -106,37 +112,37 @@ export default function Home() {
           </h1>
           <span className="border-2 border-white w-1/12 mt-3"></span>
         </div>
-        <div className="flex overflow-x-scroll scrollbar-hide">
-          <div className="flex justify-center items-center gap-x-3.5">
-            <div className="h-70 w-70 bg-white rounded-3xl overflow-hidden">
+        <div className="flex md:justify-center overflow-auto">
+          <div className="flex justify-center items-center gap-x-4.5">
+            <div className="h-25 md:h-54 w-25 md:w-54 bg-white rounded-3xl overflow-hidden">
               <img
                 src="/clients/client1.png"
                 alt=""
                 className="w-full h-full object-contain"
               />
             </div>
-            <div className="h-70 w-70 bg-white rounded-3xl overflow-hidden">
+            <div className="h-25 md:h-54 w-25 md:w-54 bg-white rounded-3xl overflow-hidden">
               <img
                 src="/clients/client2.png"
                 alt=""
                 className="w-full h-full object-contain"
               />
             </div>
-            <div className="h-70 w-70 bg-white rounded-3xl overflow-hidden">
+            <div className="h-25 md:h-54 w-25 md:w-54 bg-white rounded-3xl overflow-hidden">
               <img
                 src="/clients/client3.jpeg"
                 alt=""
                 className="w-full h-full object-contain"
               />
             </div>
-            <div className="h-70 w-70 bg-white rounded-3xl overflow-hidden">
+            <div className="h-25 md:h-54 w-25 md:w-54 bg-white rounded-3xl overflow-hidden">
               <img
                 src="/clients/client4.avif"
                 alt=""
                 className="w-full h-full object-contain"
               />
             </div>
-            <div className="h-70 w-70 bg-white rounded-3xl overflow-hidden">
+            <div className="h-25 md:h-54 w-25 md:w-54 bg-white rounded-3xl overflow-hidden">
               <img
                 src="/clients/client5.png"
                 alt=""
