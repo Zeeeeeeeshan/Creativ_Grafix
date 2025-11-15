@@ -4,103 +4,139 @@ export default function Services() {
   const BusinessServices = [
     {
       image: "/assets/ServicesAssets/BusinessCard1.png",
-      title: "MATTE LAMINATED",
-      points: ["300 GSM Card", "Smooth Matte Finish"],
+      title: "MATTE LAMINATED BUSINESS CARDS (300 GSM)",
+      points: [
+        "300 GSM premium art card",
+        "Matte lamination on both sides",
+        "Standard 3.5 x 2 inches (custom available)",
+        "Full color (CMYK) / spot color printing",
+        "Add-ons: Embossing, Spot UV, Foiling",
+      ],
       description:
-        "Matte Finish business cards have a smooth, non-reflective surface that feels luxurious. They make intricate designs look professional and stand out.",
+        "Matte laminated cards offer a smooth, non-reflective surface that gives a luxurious and modern feel. The matte finish adds subtlety to colors and prevents glare, making text and logos appear crisp and professional.",
     },
     {
       image: "/assets/ServicesAssets/BusinessCard2.png",
-      title: "GLOSS LAMINATED",
-      points: ["300 GSM Card", "Shiny Glossy Finish"],
+      title: "GLOSS LAMINATED BUSINESS CARDS (300 GSM)",
+      points: [
+        "300 GSM high-quality art card",
+        "Gloss lamination on both sides",
+        "Full color printing with high saturation",
+        "Standard & custom sizes available",
+        "Add-ons: UV Spot, Rounded Corners",
+      ],
       description:
-        "Gloss laminated business cards have a shiny, reflective surface that adds a touch of brightness and vibrancy to the card",
+        "Gloss finish cards are vibrant and attention-grabbing. The reflective coating enhances colors, making visuals pop and giving a polished look.",
     },
     {
       image: "/assets/ServicesAssets/BusinessCard3.png",
-      title: "TRUMP CARD",
+      title: "UNLAMINATED BUSINESS CARDS",
       points: [
-        "180 Micron Card",
-        "Thermal Laminated",
-        "Non Tearable",
-        "Water Resistant",
+        "280–300 GSM art board / craft texture",
+        "Raw, natural, non-laminated finish",
+        "Single or double-sided printing",
+        "Add-ons: Spot UV, Emboss, Deboss",
       ],
       description:
-        "Non-tearable business cards are made from strong materials that don't tear easily, keeping your information safe and neat for a long time.",
+        "Unlaminated cards provide a natural, organic texture that feels authentic and tactile — great for eco-friendly or creative brands.",
     },
     {
       image: "/assets/ServicesAssets/BusinessCard4.png",
-      title: "CLASSIC SPOT",
-      points: ["300 GSM Card", "Smooth Matte Finish with UV Spot on One side"],
+      title: "TRUMP CARDS (NON-TEARABLE, WATER-RESISTANT)",
+      points: [
+        "180 Micron synthetic non-tearable sheet",
+        "Thermal matte or gloss lamination",
+        "Waterproof & fade-resistant",
+        "High-resolution digital printing",
+      ],
       description:
-        "UV Spot business cards feature shiny areas on a matte background, making logos or text stand out and look professional and eye-catching.",
+        "Durable non-tearable cards designed for rough use — waterproof, flexible, and long-lasting.",
     },
     {
       image: "/assets/ServicesAssets/BusinessCard5.png",
-      title: "PREMIUM SPOT",
+      title: "CLASSIC SPOT UV BUSINESS CARDS (300 GSM)",
       points: [
-        "370 GSM Card",
-        "Matte Laminated",
-        "UV Spot on Both Sides",
-        "Grain Texture",
+        "300 GSM matte art card",
+        "Matte lamination + Spot UV (front)",
+        "Full color CMYK printing",
+        "Add-ons: Embossing, Metallic Foiling",
       ],
       description:
-        "Premium thick card with rich UV spot and grain texture on both sides which make the card bold and elegant at the same time.",
+        "Spot UV highlights logos or text with a glossy shine on a matte background — elegant, minimal, and visually striking.",
     },
     {
       image: "/assets/ServicesAssets/BusinessCard6.png",
-      title: "PREMIUM GOLD FOIL",
+      title: "IMPORTED MATTE BUSINESS CARDS (370 GSM, DUAL-SPOT UV)",
       points: [
-        "370 GSM Card",
-        "Smooth Matte Finish",
-        "Gold Foil",
-        "Also available in Velvet finish",
+        "370 GSM imported premium matte card",
+        "Double-side matte lamination",
+        "UV Spot on both sides",
+        "High-definition printing",
       ],
       description:
-        "Gold foil business cards have shiny gold areas that make logos or text look luxurious and royal.",
+        "Thick, premium imported cards with dual-side UV spot detailing for a sophisticated and high-end finish.",
     },
     {
       image: "/assets/ServicesAssets/BusinessCard7.png",
-      title: "PREMIUM 600 GSM",
-      points: ["600 GSM Card", "Matte Laminated", "UV Spot", "Grain Texture"],
+      title: "GOLD / SILVER FOILING BUSINESS CARDS (370 GSM)",
+      points: [
+        "370 GSM matte laminated card",
+        "Metallic foil stamping (gold/silver)",
+        "CMYK + Foil overlay",
+        "Options: Matte, Gloss, Velvet",
+      ],
       description:
-        "Premium thick card with rich UV spot and grain texture on both sides which make the card bold and elegant at the same time.",
+        "Luxurious cards with metallic foiling for a premium and standout appearance.",
     },
     {
       image: "/assets/ServicesAssets/BusinessCard8.png",
-      title: "IMPORTED TEXTURE",
+      title: "VELVET FINISH FOIL BUSINESS CARDS (370 GSM)",
       points: [
-        "320 GSM Imported Texture finish",
-        "Non Coated",
-        "Short Quantity Available",
+        "370 GSM thick art card",
+        "Velvet soft-touch lamination",
+        "Gold / Silver foil",
+        "Non-reflective premium texture",
       ],
       description:
-        "Imported textured business cards have a special feel and look that make them memorable and eye-catching. They use top-notch materials and detailed designs to stand out.",
+        "Soft-touch velvet cards combined with foil create a luxurious, premium experience.",
     },
     {
       image: "/assets/ServicesAssets/BusinessCard9.png",
-      title: "CUSTOM SHAPE BUSINESS CARDS",
-      points: ["350 GSM Card", "Smooth Matte Finish", "Any Shape Cutting"],
+      title: "TEXTURED BUSINESS CARDS WITH SPOT UV (320 GSM)",
+      points: [
+        "320 GSM imported textured stock",
+        "Natural texture finish",
+        "UV Spot gloss",
+        "Metallic ink / emboss / deboss options",
+        "Short-run printing available",
+      ],
       description:
-        "Custom shape business cards stand out with their unique and creative designs, making a memorable first impression.",
+        "Premium textured cards with UV spot detailing — artistic and memorable with a handmade feel.",
     },
     {
-      image: "/assets/ServicesAssets/Invoice1.png",
-      title: "SINGLE/DOUBLE COLOURED BILL BOOKS",
+      image: "/assets/ServicesAssets/BusinessCard7.png",
+      title: "DOUBLE PASTING PREMIUM CARDS (600 GSM)",
       points: [
-        "Original + Duplicate",
-        "Original + Duplicate + Triplicate",
-        "Normal Binding & Case Binding",
+        "600 GSM double-pasted board",
+        "Matte lamination",
+        "UV Spot",
+        "Grain or linen texture available",
+        "Add-ons: Edge painting, Emboss, Foil",
       ],
+      description:
+        "Ultra-thick premium cards that deliver exceptional strength, elegance, and a statement of authority.",
     },
     {
-      image: "/assets/ServicesAssets/Invoice2.png",
-      title: "MULTI-COLOURED BILL BOOKS",
+      image: "/assets/ServicesAssets/BusinessCard9.png",
+      title: "CUSTOM SHAPE BUSINESS CARDS (350 GSM)",
       points: [
-        "Original + Duplicate",
-        "Original + Duplicate + Triplicate",
-        "Normal Binding & Case Binding",
+        "350 GSM matte or gloss card",
+        "Smooth lamination",
+        "Custom die-cut shapes",
+        "Add-ons: Foil, Spot UV, Emboss",
       ],
+      description:
+        "Unique die-cut business cards that reflect your brand identity and leave a memorable impression.",
     },
   ];
 
@@ -263,6 +299,38 @@ export default function Services() {
       image: "/assets/ServicesAssets/Wedding4.png",
       title: "Wedding Cards",
     },
+    {
+      image: "/assets/ServicesAssets/Wedding1.png",
+      title: "Wedding Cards",
+    },
+    {
+      image: "/assets/ServicesAssets/Wedding2.png",
+      title: "Wedding Cards",
+    },
+    {
+      image: "/assets/ServicesAssets/Wedding3.png",
+      title: "Wedding Cards",
+    },
+    {
+      image: "/assets/ServicesAssets/Wedding4.png",
+      title: "Wedding Cards",
+    },
+    {
+      image: "/assets/ServicesAssets/Wedding1.png",
+      title: "Wedding Cards",
+    },
+    {
+      image: "/assets/ServicesAssets/Wedding2.png",
+      title: "Wedding Cards",
+    },
+    {
+      image: "/assets/ServicesAssets/Wedding3.png",
+      title: "Wedding Cards",
+    },
+    {
+      image: "/assets/ServicesAssets/Wedding4.png",
+      title: "Wedding Cards",
+    },
   ];
 
   const PackagingService = [
@@ -337,14 +405,19 @@ export default function Services() {
       <div className="bg-[#f8fcff] shadow-lg shadow-black/10 ">
         <div className="relative overflow-hidden bg-redShade py-4">
           {/* Gradient overlays for smooth fade edges */}
-          <div className="absolute bottom-0 w-full bg-[#5f6164] h-1/2 border-t-2 border-white"></div>
-
+          <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-redShade to-transparent z-10"></div>
+          <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-redShade to-transparent z-10"></div>
           {/* Animation container */}
-          <div className="flex whitespace-nowrap">
-            {/* Banner Animation */}
-            <marquee behavior="" direction="right">
-              <img src="/Banner1.png" alt="Company Logo" className="mx-8 " />
-            </marquee>
+          <div className="flex whitespace-nowrap animate-scroll-right">
+            {/* Duplicate the logo multiple times for continuous loop */}
+            {Array.from({ length: 52 }).map((_, i) => (
+              <img
+                key={i}
+                src="/FooterLogo.svg"
+                alt="Company Logo"
+                className="mx-8 opacity-90 hover:opacity-100 transition-opacity"
+              />
+            ))}
           </div>
         </div>
         <div className=" mx-auto lg:px-19  pt-12 text-center md:text-left flex flex-col md:flex-row items-center gap-10">
@@ -373,7 +446,7 @@ export default function Services() {
         </div>
       </div>
 
-      <div className="w-full flex flex-col items-center justify-start text-center px-8 py-16 bg-[#eeeeee]">
+      <div className="w-full flex flex-col items-center justify-start text-center py-16 bg-[#eeeeee]">
         <h1 className="text-2xl md:text-3xl lg:text-4xl">
           <span className="font-bold text-redShade">BUSINESS</span> PRINTING
           SERVICES
@@ -385,17 +458,17 @@ export default function Services() {
               <div className="">
                 <img src={service.image} alt="" className="h-56 " />
               </div>
-              <div className="md:w-3/5 flex flex-col justify-center items-start gap-y-2">
-                <h1 className="text-2xl md:text-3xl text-start text-redShade font-bold">
+              <div className="md:w-4/5 flex flex-col justify-center items-start gap-y-2">
+                <h1 className="text-xl md:text-2xl text-start text-redShade font-bold">
                   {service.title}
                 </h1>
-                <ul className="list-disc md:text-xl text-start font-bold">
+                <ul className="list-disc md:text-lg text-start font-semibold">
                   {service.points.map((point, index) => (
                     <li>{point}</li>
                   ))}
                 </ul>
                 {service.description && (
-                  <p className="md:text-xl text-start font-medium">
+                  <p className="text-start font-medium">
                     "{service.description}"
                   </p>
                 )}
@@ -412,12 +485,12 @@ export default function Services() {
           </div>
         </div>
       </div>
-      <div className="w-full flex flex-col items-center justify-start text-center px-8 py-16 bg-white">
+      <div className="w-full flex flex-col items-center justify-start text-center py-16 bg-white">
         <h1 className="text-2xl md:text-3xl lg:text-4xl">
           <span className="font-bold text-redShade">PACKAGING</span> & BRANDING
         </h1>
         <span className="border-2 w-1/12 mt-4"></span>
-        <div className="flex flex-wrap w-full justify-center mt-8 gap-4">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 w-full justify-center mt-8 gap-4">
           {PackagingService.map((service) => (
             <div className="flex flex-col justify-center items-center">
               <img src={service.image} alt="" className="h-56" />
@@ -426,13 +499,13 @@ export default function Services() {
           ))}
         </div>
       </div>
-      <div className="w-full flex flex-col items-center justify-start text-center px-8 py-16 bg-[#eeeeee]">
+      <div className="w-full flex flex-col items-center justify-start text-center py-16">
         <h1 className="text-2xl md:text-3xl lg:text-4xl">
           <span className="font-bold text-redShade">CORPORATE</span> &
           EDUCATIONAL PRINTING
         </h1>
         <span className="border-2 w-1/12 mt-4"></span>
-        <div className="flex flex-wrap gap-4 justify-center mt-8">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 w-full gap-4 justify-center mt-8">
           {CorporateServices.map((service) => (
             <div className="flex flex-col justify-center items-center">
               <img src={service.image} alt="" className="h-56" />
@@ -446,7 +519,7 @@ export default function Services() {
           <span className="font-bold text-redShade">SPECIAL</span> PRINTING
         </h1>
         <span className="border-2 w-1/12 mt-4"></span>
-        <div className="flex flex-wrap gap-4 justify-center mt-8">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 w-full gap-4 justify-center mt-8">
           {WeddingService.map((service) => (
             <div>
               <img src={service.image} alt="" className="h-48" />

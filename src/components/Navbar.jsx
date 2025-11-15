@@ -14,7 +14,7 @@ export default function Navbar() {
 
   return (
     <>
-      <div className="h-[100px] md:h-[110px]"></div>
+      <div className="h-[123px]"></div>
 
       <div className="w-full fixed top-0 z-50">
         {/* Top Red Bar */}

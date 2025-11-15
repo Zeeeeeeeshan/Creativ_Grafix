@@ -91,7 +91,7 @@ export default function Home() {
         </div>
       </div>
       <div>
-        <div className="flex justify-center items-center flex-col py-8 ">
+        <div className="flex justify-center items-center flex-col py-8">
           <h1 className="text-3xl">
             OUR KEY <span className="font-bold text-redShade">PRODUCTS</span>
           </h1>

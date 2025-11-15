@@ -33,11 +33,23 @@ export default function KeyProducts({ color }) {
         "/assets/VisitingCard4.png",
         "/assets/VisitingCard5.png",
         "/assets/VisitingCard6.png",
+        "/assets/VisitingCard1.png",
+        "/assets/VisitingCard2.png",
+        "/assets/VisitingCard3.png",
+        "/assets/VisitingCard4.png",
+        "/assets/VisitingCard5.png",
+        "/assets/VisitingCard6.png",
       ],
     },
     {
       name: "Flyers & Pamphlets",
       items: [
+        "/assets/Flyers1.png",
+        "/assets/Flyers2.png",
+        "/assets/Flyers3.png",
+        "/assets/Flyers4.png",
+        "/assets/Flyers5.png",
+        "/assets/Flyers6.png",
         "/assets/Flyers1.png",
         "/assets/Flyers2.png",
         "/assets/Flyers3.png",
@@ -55,11 +67,25 @@ export default function KeyProducts({ color }) {
         "/assets/BrochureCatalogue4.png",
         "/assets/BrochureCatalogue5.png",
         "/assets/BrochureCatalogue6.png",
+        "/assets/BrochureCatalogue1.png",
+        "/assets/BrochureCatalogue2.png",
+        "/assets/BrochureCatalogue3.png",
+        "/assets/BrochureCatalogue4.png",
+        "/assets/BrochureCatalogue5.png",
+        "/assets/BrochureCatalogue6.png",
       ],
     },
     {
       name: "Letterheads & Envelopes",
       items: [
+        "/assets/LetterheadEnvelops1.png",
+        "/assets/LetterheadEnvelops2.png",
+        "/assets/LetterheadEnvelops3.png",
+        "/assets/LetterheadEnvelops4.png",
+        "/assets/LetterheadEnvelops1.png",
+        "/assets/LetterheadEnvelops2.png",
+        "/assets/LetterheadEnvelops3.png",
+        "/assets/LetterheadEnvelops4.png",
         "/assets/LetterheadEnvelops1.png",
         "/assets/LetterheadEnvelops2.png",
         "/assets/LetterheadEnvelops3.png",
@@ -74,6 +100,13 @@ export default function KeyProducts({ color }) {
         "/assets/BoxBag3.png",
         "/assets/BoxBag4.png",
         "/assets/BoxBag5.png",
+        "/assets/BoxBag1.png",
+        "/assets/BoxBag2.png",
+        "/assets/BoxBag3.png",
+        "/assets/BoxBag4.png",
+        "/assets/BoxBag5.png",
+        "/assets/BoxBag2.png",
+        "/assets/BoxBag3.png",
       ],
     },
     {
@@ -98,15 +131,34 @@ export default function KeyProducts({ color }) {
     },
     {
       name: "Stickers & Labels",
-      items: ["/assets/StickerLabel1.png", "/assets/StickerLabel2.png"],
+      items: [
+        "/assets/StickerLabel1.png",
+        "/assets/StickerLabel2.png",
+        "/assets/StickerLabel1.png",
+        "/assets/StickerLabel2.png",
+        "/assets/StickerLabel1.png",
+        "/assets/StickerLabel2.png",
+        "/assets/StickerLabel1.png",
+        "/assets/StickerLabel2.png",
+        "/assets/StickerLabel1.png",
+        "/assets/StickerLabel2.png",
+        "/assets/StickerLabel1.png",
+        "/assets/StickerLabel2.png",
+      ],
     },
     {
       name: "Special Prints",
       items: [
-        "/assets/SpecialPrint3.png",
-        "/assets/SpecialPrint4.png",
         "/assets/SpecialPrint1.png",
         "/assets/SpecialPrint2.png",
+        "/assets/SpecialPrint3.png",
+        "/assets/SpecialPrint4.png",
+        "/assets/SpecialPrint5.png",
+        "/assets/SpecialPrint6.png",
+        "/assets/SpecialPrint1.png",
+        "/assets/SpecialPrint2.png",
+        "/assets/SpecialPrint3.png",
+        "/assets/SpecialPrint4.png",
         "/assets/SpecialPrint5.png",
         "/assets/SpecialPrint6.png",
       ],
@@ -120,14 +172,14 @@ export default function KeyProducts({ color }) {
     ProductData.find((p) => p.name === selectedProduct)?.items || [];
 
   return (
-    <div className="px-3 md:px-15 ">
+    <div className="w-full">
       {/* Top Scrollable Tabs */}
       <div className="flex overflow-x-scroll scrollbar-hide">
         <div className="flex gap-x-3">
           {products.map((product) => (
             <div
               key={product.name}
-              className={`flex flex-col items-center justify-center p-3 cursor-pointer rounded-t-2xl transition-all ${
+              className={`flex flex-col items-center justify-center w-41.5 p-3 cursor-pointer rounded-t-2xl transition-all ${
                 selectedProduct === product.name
                   ? `${color ? `bg-${color}` : "bg-red-200"}`
                   : "bg-gray-200"
@@ -150,14 +202,14 @@ export default function KeyProducts({ color }) {
         className={`w-full py-10 bg-${color ? color : "red-50"} rounded-b-2xl`}
       >
         {selectedData.length > 0 ? (
-          <div className="flex flex-wrap justify-center gap-2">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 w-full gap-2">
             {selectedData.map((src, index) => (
-              <Link to={"/services"} key={index}>
+              <Link to={"/services"} key={index} className="">
                 <img
                   key={index}
                   src={src}
                   alt={`${selectedProduct} ${index + 1}`}
-                  className="h-55 rounded-xl p-2 bg-gray-200 shadow-md hover:scale-105 transition-transform duration-200"
+                  className="h-65 w-full rounded-xl p-2 bg-gray-200 shadow-md hover:scale-105 transition-transform duration-200"
                 />
               </Link>
             ))}
