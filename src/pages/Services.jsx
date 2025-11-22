@@ -480,8 +480,8 @@ export default function Services() {
               key={index}
               className="flex flex-col justify-center items-center"
             >
+              <h2 className="text-lg text-nowrap font-medium ">{service.title}</h2>
               <img src={service.image} className="h-56" />
-              <h2 className="text-xl font-semibold">{service.title}</h2>
             </div>
           ))}
         </div>
@@ -501,8 +501,8 @@ export default function Services() {
               key={index}
               className="flex flex-col justify-center items-center"
             >
+              <h2 className="text-lg font-medium">{service.title}</h2>
               <img src={service.image} className="h-56" />
-              <h2 className="text-xl font-semibold">{service.title}</h2>
             </div>
           ))}
         </div>
@@ -518,8 +518,8 @@ export default function Services() {
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 mt-8 w-full">
           {WeddingService.map((service, index) => (
             <div key={index}>
-              <img src={service.image} className="h-48" />
               <h2 className="text-xl font-semibold">{service.title}</h2>
+              <img src={service.image} className="h-48" />
             </div>
           ))}
         </div>

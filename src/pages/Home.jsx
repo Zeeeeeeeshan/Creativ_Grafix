@@ -108,7 +108,7 @@ export default function Home() {
       <div className="bg-[#222222] flex flex-col gap-y-8 py-8 px-4 rounded-t">
         <div className="flex justify-center items-center flex-col">
           <h1 className="text-3xl font-bold text-white">
-            OUR <span className="text-redShade">TOP CLIENT</span>
+            OUR <span className="text-redShade">TOP CLIENTS</span>
           </h1>
           <span className="border-2 border-white w-1/12 mt-3"></span>
         </div>
