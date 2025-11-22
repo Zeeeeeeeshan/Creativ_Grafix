@@ -1,6 +1,153 @@
 import CTA from "../components/CTA";
 
 export default function Services() {
+  // Highlights data for each section
+  const serviceHighlights = {
+    visitingCards: [
+      "350–600 GSM premium card stocks (Art, Texture, Metallic, Kraft)",
+      "Matt, Gloss, Velvet, and Foil finishes",
+      "Rounded corners, embossed logos, and spot UV options",
+      "Custom shapes and die-cuts available",
+      "Trump Cards: Non-tearable, water-resistant, and long-lasting",
+    ],
+    letterheads: [
+      "100–120 GSM bond or textured paper",
+      "Offset & digital printing options",
+      "Full-color, watermark, or embossed branding",
+      "Gold foil or embossed logo options",
+      "Ideal for corporate communication and documentation",
+    ],
+    envelopes: [
+      "Sizes: DL, C4, C5, C6, and custom",
+      "90–120 GSM bond, texture, or kraft papers",
+      "Window and non-window options",
+      "Standard & custom sizes (4x10, 5x10, 9x12)",
+      "Matching letterhead design available",
+    ],
+    folders: [
+      "300–400 GSM art board",
+      "Matt / gloss lamination or velvet finish",
+      "Pocket and slit options for business cards",
+      "Die-cut and foil branding available",
+      "Business card slots & die-cut options",
+    ],
+    idCards: [
+      "PVC, Acrylic, or laminated ID cards",
+      "Barcode / QR / Magnetic stripe options",
+      "Custom-designed lanyards with sublimation print",
+      "Both single and double-sided printing",
+      "Durable, waterproof, and perfectly aligned with branding",
+    ],
+    billBooks: [
+      "NCR (No Carbon Required) paper sets",
+      "2/3/4 ply options",
+      "Sequential numbering, perforation, binding",
+      "Custom branding and layout design",
+      "Single, double, or multi-color printing",
+    ],
+    notepads: [
+      "Top or side binding with hard back support",
+      "A4, A5, and custom sizes",
+      "70–100 GSM inner pages",
+      "Personalized cover design",
+      "Printed on premium bond or maplitho paper",
+    ],
+    stationeryKits: [
+      "Complete corporate identity set",
+      "High-quality materials and finishing",
+      "Designed by in-house professionals",
+      "Includes business cards, letterheads, envelopes, notepads, and folders",
+      "All designed cohesively for unified brand experience",
+    ],
+    flyers: [
+      "130–300 GSM paper options",
+      "Gloss, matt, or texture finish",
+      "Single or double-sided printing",
+      "Trifold, bifold, or A4 sizes",
+      "UV coating and lamination options",
+      "Creative design assistance available",
+    ],
+    brochures: [
+      "A4, A5, tri-fold, bi-fold, or custom sizes",
+      "170–300 GSM art paper",
+      "Gloss or matte lamination",
+      "Stapled, perfect bound, or wire-o binding",
+      "Multi-page layout with images",
+    ],
+    posters: [
+      "Sizes: A3, A2, A1, A0, and custom",
+      "Matt or gloss paper finishes",
+      "Gloss / Matt / Vinyl options",
+      "Indoor and outdoor media options",
+      "Vivid color and clarity using large-format printing",
+    ],
+    stickers: [
+      "Paper, vinyl, transparent, and metallic stickers",
+      "Kiss-cut or die-cut options",
+      "Gloss, matt, or UV finish",
+      "Permanent and removable adhesive types",
+      "Waterproof and UV-coated options",
+    ],
+    danglers: [
+      "300–400 GSM art board",
+      "Matt / gloss lamination",
+      "Die-cut and string options",
+      "Gloss/matt finish, die-cut",
+      "Threading and punching options",
+    ],
+    menus: [
+      "300–400 GSM art board",
+      "Matt, gloss, or velvet finish",
+      "Waterproof lamination",
+      "Folded or tent-style designs",
+      "Water-resistant coating available",
+    ],
+    corporateGifts: [
+      "High-quality sublimation & UV printing",
+      "Durable materials and premium finishes",
+      "Products: Mugs, bottles, pens, caps, T-shirts, mouse pads, keychains, fridge magnets",
+      "Custom-printed bags and gift boxes",
+    ],
+    educational: [
+      "Hard & soft cover diaries",
+      "Student report cards and ID cards",
+      "Multi-page layout with images",
+      "Gloss/matt lamination",
+      "Perfect binding or stapled",
+      "Custom logo and branding",
+    ],
+    packagingBoxes: [
+      "Food-grade or laminated cardboards",
+      "Custom die-cut and shape",
+      "Branding with UV, foil, or embossing",
+      "Types: Pizza/Burger/Sweet Boxes, Cosmetic/Corrugated/Pharma Boxes",
+    ],
+    paperBags: [
+      "120–250 GSM kraft / art paper",
+      "Rope or die-cut handles",
+      "Foil or UV branding options",
+      "Eco-friendly, strong, and stylish",
+    ],
+    weddingCards: [
+      "300–600 GSM premium board",
+      "Gold foil, embossing, or velvet lamination",
+      "Matching envelopes available",
+      "Custom shapes and luxurious finishes",
+    ],
+    diaries: [
+      "Hard cover / soft cover / wiro bound",
+      "Custom branding, embossing, and logo print",
+      "Available in standard and executive sizes",
+      "250 GSM cover with quality inner pages",
+    ],
+    calendars: [
+      "Wall, desk, and pocket types",
+      "250 GSM cover with 170 GSM inner pages",
+      "Spiral or wire-o binding",
+      "Personalized monthly design",
+    ],
+  };
+
   /* ----------------------- BUSINESS CARDS --------------------------- */
   const BusinessServices = [
     {
@@ -114,31 +261,6 @@ export default function Services() {
       description:
         "Premium textured cards with UV spot detailing — artistic and memorable with a handmade feel.",
     },
-    {
-      image: "/assets/ServicesAssets/BusinessCard7.png",
-      title: "DOUBLE PASTING PREMIUM CARDS (600 GSM)",
-      points: [
-        "600 GSM double-pasted board",
-        "Matte lamination",
-        "UV Spot",
-        "Grain or linen texture available",
-        "Add-ons: Edge painting, Emboss, Foil",
-      ],
-      description:
-        "Ultra-thick premium cards that deliver exceptional strength, elegance, and a statement of authority.",
-    },
-    {
-      image: "/assets/ServicesAssets/BusinessCard9.png",
-      title: "CUSTOM SHAPE BUSINESS CARDS (350 GSM)",
-      points: [
-        "350 GSM matte or gloss card",
-        "Smooth lamination",
-        "Custom die-cut shapes",
-        "Add-ons: Foil, Spot UV, Emboss",
-      ],
-      description:
-        "Unique die-cut business cards that reflect your brand identity and leave a memorable impression.",
-    },
   ];
 
   /* ------------------------ FLYERS SECTION -------------------------- */
@@ -234,7 +356,7 @@ export default function Services() {
     { image: "/assets/ServicesAssets/Invoice5.png", title: "VOUCHER BOOKS" },
   ];
 
-  /* ---------------------- CORPORATE SERVICES (Flyers removed) --------------------- */
+  /* ---------------------- CORPORATE SERVICES --------------------- */
   const CorporateServices = [
     {
       image: "/assets/ServicesAssets/Letter1.png",
@@ -300,6 +422,7 @@ export default function Services() {
 
     { image: "/assets/ServicesAssets/Calendar1.png", title: "Wall Calendar" },
     { image: "/assets/ServicesAssets/Calendar2.png", title: "Table Calendar" },
+    { image: "/assets/ServicesAssets/Calendar3.png", title: "Table Calendar" },
   ];
 
   /* ---------------------- WEDDING --------------------- */
@@ -308,14 +431,11 @@ export default function Services() {
     { image: "/assets/ServicesAssets/Wedding2.png", title: "Wedding Cards" },
     { image: "/assets/ServicesAssets/Wedding3.png", title: "Wedding Cards" },
     { image: "/assets/ServicesAssets/Wedding4.png", title: "Wedding Cards" },
-    { image: "/assets/ServicesAssets/Wedding1.png", title: "Wedding Cards" },
-    { image: "/assets/ServicesAssets/Wedding2.png", title: "Wedding Cards" },
-    { image: "/assets/ServicesAssets/Wedding3.png", title: "Wedding Cards" },
-    { image: "/assets/ServicesAssets/Wedding4.png", title: "Wedding Cards" },
-    { image: "/assets/ServicesAssets/Wedding1.png", title: "Wedding Cards" },
-    { image: "/assets/ServicesAssets/Wedding2.png", title: "Wedding Cards" },
-    { image: "/assets/ServicesAssets/Wedding3.png", title: "Wedding Cards" },
-    { image: "/assets/ServicesAssets/Wedding4.png", title: "Wedding Cards" },
+    { image: "/assets/ServicesAssets/Wedding5.png", title: "Wedding Cards" },
+    { image: "/assets/ServicesAssets/Wedding6.png", title: "Wedding Cards" },
+    { image: "/assets/ServicesAssets/Wedding7.png", title: "Wedding Cards" },
+    { image: "/assets/ServicesAssets/Wedding8.jpg", title: "Wedding Cards" },
+    { image: "/assets/ServicesAssets/Wedding9.png", title: "Wedding Cards" },
   ];
 
   /* ---------------------- PACKAGING --------------------- */
@@ -390,138 +510,597 @@ export default function Services() {
         </div>
       </div>
 
-      {/* ---------------- BUSINESS SERVICES ---------------- */}
-      <div className="w-full flex flex-col items-center py-16 bg-[#eeeeee]">
-        <h1 className="text-2xl md:text-3xl lg:text-4xl">
-          <span className="font-bold text-redShade">BUSINESS</span> PRINTING
-          SERVICES
+      {/* ---------------- CORPORATE & BUSINESS STATIONERY ---------------- */}
+      <div className="w-full flex flex-col items-center py-16 bg-white">
+        <h1 className="text-2xl md:text-3xl lg:text-4xl text-center">
+          <span className="font-bold text-redShade">CORPORATE & BUSINESS</span>{" "}
+          STATIONERY
         </h1>
         <span className="border-2 w-1/12 mt-4" />
 
-        <div id="business-card" className="flex flex-col gap-y-8 mt-10 w-full">
-          {BusinessServices.map((service, index) => (
-            <div
-              key={index}
-              className="flex flex-col md:flex-row justify-center items-center w-full gap-10"
-            >
-              <img src={service.image} className="h-56" />
-              <div className="md:w-4/5 flex flex-col gap-y-2 items-start">
-                <h1 className="text-xl md:text-2xl text-redShade font-bold">
-                  {service.title}
-                </h1>
+        <div className="mt-8 w-full px-4">
+          <p className="text-lg text-center mb-8 max-w-4xl mx-auto">
+            Your first impression deserves perfection. Our premium corporate
+            stationery is crafted using the finest paper stocks and advanced
+            in-house printing technology to reflect your brand identity with
+            sophistication.
+          </p>
+        </div>
 
-                <ul className="list-disc md:text-lg font-semibold">
-                  {service.points.map((p, i) => (
-                    <li key={i}>{p}</li>
-                  ))}
-                </ul>
+        {/* Premium Visiting Cards */}
+        <div className="w-full flex flex-col items-center py-8 bg-[#eeeeee] rounded-lg px-4">
+          <h2 className="text-xl md:text-2xl font-bold text-redShade mb-6">
+            PREMIUM VISITING CARDS
+          </h2>
+          <p className="text-lg text-center mb-6 max-w-4xl mx-auto">
+            Make your first impression last with our premium range of visiting
+            cards — designed to reflect your brand identity and professionalism.
+            Each card is crafted using the finest materials and high-end
+            in-house printing technology to deliver sharp details and luxurious
+            finishes.
+          </p>
 
-                <p className="font-medium">"{service.description}"</p>
+          <div className="bg-white p-6 rounded-lg shadow-md mb-8 max-w-4xl w-full">
+            <h3 className="text-lg font-bold text-redShade mb-4">
+              HIGHLIGHTS:
+            </h3>
+            <ul className="list-disc list-inside grid grid-cols-1 md:grid-cols-2 gap-2">
+              {serviceHighlights.visitingCards.map((highlight, index) => (
+                <li key={index} className="text-gray-700">
+                  {highlight}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 mt-4 w-full max-w-6xl">
+            {BusinessServices.map((service, index) => (
+              <div
+                key={index}
+                className="flex flex-col items-center text-center"
+              >
+                <img src={service.image} className=" object-contain" />
+                <h3 className="font-medium">{service.title}</h3>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
+        </div>
 
-          {/* Voucher Section */}
-          <div className="w-full flex flex-wrap items-center justify-center gap-12 mt-8">
+        {/* Letterheads */}
+        <div className="w-full flex flex-col items-center py-8 px-4">
+          <h2 className="text-xl md:text-2xl font-bold text-redShade mb-6">
+            LETTERHEADS
+          </h2>
+          <p className="text-lg text-center mb-6 max-w-4xl mx-auto">
+            Official communication that speaks volumes about your
+            professionalism. Our custom-printed letterheads are designed with
+            precision alignment, brand consistency, and premium paper quality to
+            leave a lasting impression.
+          </p>
+
+          <div className="bg-gray-100 p-6 rounded-lg shadow-md mb-8 max-w-4xl w-full">
+            <h3 className="text-lg font-bold text-redShade mb-4">
+              HIGHLIGHTS:
+            </h3>
+            <ul className="list-disc list-inside grid grid-cols-1 md:grid-cols-2 gap-2">
+              {serviceHighlights.letterheads.map((highlight, index) => (
+                <li key={index} className="text-gray-700">
+                  {highlight}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-4 w-full max-w-6xl">
+            {CorporateServices.slice(0, 4).map((service, index) => (
+              <div
+                key={index}
+                className="flex flex-col items-center text-center"
+              >
+                <img src={service.image} className="h-48 object-contain" />
+                <h3 className=" font-medium mt-2">{service.title}</h3>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Envelopes */}
+        <div className="w-full flex flex-col items-center py-8 bg-[#eeeeee] rounded-lg px-4">
+          <h2 className="text-xl md:text-2xl font-bold text-redShade mb-6">
+            ENVELOPES
+          </h2>
+          <p className="text-lg text-center mb-6 max-w-4xl mx-auto">
+            Tailored envelopes that complement your brand identity. From
+            standard business envelopes to custom-sized creative ones, we
+            manufacture every piece in-house to ensure accuracy, print quality,
+            and elegance.
+          </p>
+
+          <div className="bg-white p-6 rounded-lg shadow-md mb-8 max-w-4xl w-full">
+            <h3 className="text-lg font-bold text-redShade mb-4">
+              HIGHLIGHTS:
+            </h3>
+            <ul className="list-disc list-inside grid grid-cols-1 md:grid-cols-2 gap-2">
+              {serviceHighlights.envelopes.map((highlight, index) => (
+                <li key={index} className="text-gray-700">
+                  {highlight}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-4 w-full max-w-6xl">
+            {CorporateServices.slice(4, 8).map((service, index) => (
+              <div
+                key={index}
+                className="flex flex-col items-center text-center"
+              >
+                <img src={service.image} className="h-48 object-contain" />
+                <h3 className=" font-medium mt-2">{service.title}</h3>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Corporate Gifts & Merchandise */}
+        <div className="w-full flex flex-col items-center py-8 px-4">
+          <h2 className="text-xl md:text-2xl font-bold text-redShade mb-6">
+            CORPORATE GIFTS & MERCHANDISE
+          </h2>
+          <p className="text-lg text-center mb-6 max-w-4xl mx-auto">
+            Enhance your brand presence with custom corporate merchandise — all
+            designed and branded in-house.
+          </p>
+
+          <div className="bg-gray-100 p-6 rounded-lg shadow-md mb-8 max-w-4xl w-full">
+            <h3 className="text-lg font-bold text-redShade mb-4">
+              HIGHLIGHTS:
+            </h3>
+            <ul className="list-disc list-inside grid grid-cols-1 md:grid-cols-2 gap-2">
+              {serviceHighlights.corporateGifts.map((highlight, index) => (
+                <li key={index} className="text-gray-700">
+                  {highlight}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4 mt-4 w-full max-w-6xl">
+            {CorporateServices.slice(8, 14).map((service, index) => (
+              <div
+                key={index}
+                className="flex flex-col items-center text-center"
+              >
+                <img src={service.image} className="h-32 object-contain" />
+                <h3 className=" font-medium mt-2">{service.title}</h3>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Diaries */}
+        <div className="w-full flex flex-col items-center py-8 bg-[#eeeeee] rounded-lg px-4">
+          <h2 className="text-xl md:text-2xl font-bold text-redShade mb-6">
+            DIARIES
+          </h2>
+          <p className="text-lg text-center mb-6 max-w-4xl mx-auto">
+            Custom-branded diaries made with premium materials and designed for
+            functionality and elegance.
+          </p>
+
+          <div className="bg-white p-6 rounded-lg shadow-md mb-8 max-w-4xl w-full">
+            <h3 className="text-lg font-bold text-redShade mb-4">
+              HIGHLIGHTS:
+            </h3>
+            <ul className="list-disc list-inside grid grid-cols-1 md:grid-cols-2 gap-2">
+              {serviceHighlights.diaries.map((highlight, index) => (
+                <li key={index} className="text-gray-700">
+                  {highlight}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 mt-4 w-full max-w-6xl">
+            {CorporateServices.slice(14, 19).map((service, index) => (
+              <div
+                key={index}
+                className="flex flex-col items-center text-center"
+              >
+                <img src={service.image} className="h-48 object-contain" />
+                <h3 className=" font-medium mt-2">{service.title}</h3>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Educational Printing */}
+        <div className="w-full flex flex-col items-center py-8 px-4">
+          <h2 className="text-xl md:text-2xl font-bold text-redShade mb-6">
+            EDUCATIONAL PRINTING
+          </h2>
+          <p className="text-lg text-center mb-6 max-w-4xl mx-auto">
+            Customized school and college stationery that reflects your
+            institution's brand and discipline.
+          </p>
+
+          <div className="bg-gray-100 p-6 rounded-lg shadow-md mb-8 max-w-4xl w-full">
+            <h3 className="text-lg font-bold text-redShade mb-4">
+              HIGHLIGHTS:
+            </h3>
+            <ul className="list-disc list-inside grid grid-cols-1 md:grid-cols-2 gap-2">
+              {serviceHighlights.educational.map((highlight, index) => (
+                <li key={index} className="text-gray-700">
+                  {highlight}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 mt-4 w-full max-w-6xl">
+            {CorporateServices.slice(19, 24).map((service, index) => (
+              <div
+                key={index}
+                className="flex flex-col items-center text-center"
+              >
+                <img src={service.image} className="h-48 object-contain" />
+                <h3 className=" font-medium mt-2">{service.title}</h3>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Calendars */}
+        <div className="w-full flex flex-col items-center py-8 bg-[#eeeeee] rounded-lg px-4">
+          <h2 className="text-xl md:text-2xl font-bold text-redShade mb-6">
+            CALENDARS
+          </h2>
+          <p className="text-lg text-center mb-6 max-w-4xl mx-auto">
+            Keep your brand visible all year round with custom desk and wall
+            calendars.
+          </p>
+
+          <div className="bg-white p-6 rounded-lg shadow-md mb-8 max-w-4xl w-full">
+            <h3 className="text-lg font-bold text-redShade mb-4">
+              HIGHLIGHTS:
+            </h3>
+            <ul className="list-disc list-inside grid grid-cols-1 md:grid-cols-2 gap-2">
+              {serviceHighlights.calendars.map((highlight, index) => (
+                <li key={index} className="text-gray-700">
+                  {highlight}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-4 w-full max-w-6xl">
+            {CorporateServices.slice(24).map((service, index) => (
+              <div
+                key={index}
+                className="flex flex-col items-center text-center"
+              >
+                <img src={service.image} className="h-56 object-contain" />
+                <h3 className=" font-medium mt-2">{service.title}</h3>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Vouchers & Bill Books */}
+        <div className="w-full flex flex-col items-center py-8 px-4">
+          <h2 className="text-xl md:text-2xl font-bold text-redShade mb-6">
+            VOUCHERS & BILL BOOKS
+          </h2>
+          <p className="text-lg text-center mb-6 max-w-4xl mx-auto">
+            Professionally printed multi-copy bill books and vouchers designed
+            for accuracy, branding, and durability.
+          </p>
+
+          <div className="bg-gray-100 p-6 rounded-lg shadow-md mb-8 max-w-4xl w-full">
+            <h3 className="text-lg font-bold text-redShade mb-4">
+              HIGHLIGHTS:
+            </h3>
+            <ul className="list-disc list-inside grid grid-cols-1 md:grid-cols-2 gap-2">
+              {serviceHighlights.billBooks.map((highlight, index) => (
+                <li key={index} className="text-gray-700">
+                  {highlight}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="flex flex-wrap justify-center gap-12 mt-4 w-full max-w-6xl">
             {VoucherService.map((voucher, index) => (
               <div key={index} className="text-center">
-                <img src={voucher.image} />
-                <h2 className="text-xl font-bold">{voucher.title}</h2>
+                <img src={voucher.image} className="h-48 object-contain" />
+                <h2 className="text-xl font-bold mt-2">{voucher.title}</h2>
               </div>
             ))}
           </div>
         </div>
       </div>
 
-      {/* ---------------- FLYERS SECTION (NEW) ---------------- */}
-      <div className="w-full flex flex-col items-center py-16 bg-white">
-        <h1 className="text-2xl md:text-3xl lg:text-4xl">
-          <span className="font-bold text-redShade">FLYERS</span> PRINTING
-          SERVICES
-        </h1>
-        <span className="border-2 w-1/12 mt-4" />
-
-        <div className="flex flex-col gap-y-8 mt-10 w-full">
-          {FlyersServices.map((service, index) => (
-            <div
-              key={index}
-              className="flex flex-col md:flex-row justify-center items-center w-full gap-10"
-            >
-              <img src={service.image} className="h-56" />
-
-              <div className="md:w-4/5 flex flex-col items-start gap-y-2">
-                <h1 className="text-xl md:text-2xl text-redShade font-bold">
-                  {service.title}
-                </h1>
-
-                <ul className="list-disc md:text-lg font-semibold">
-                  {service.points.map((p, i) => (
-                    <li key={i}>{p}</li>
-                  ))}
-                </ul>
-
-                <p className="font-medium">"{service.description}"</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* ---------------- PACKAGING ---------------- */}
+      {/* ---------------- MARKETING & PROMOTIONAL PRINTS ---------------- */}
       <div className="w-full flex flex-col items-center py-16 bg-[#eeeeee]">
-        <h1 className="text-2xl md:text-3xl lg:text-4xl">
-          <span className="font-bold text-redShade">PACKAGING</span> & BRANDING
+        <h1 className="text-2xl md:text-3xl lg:text-4xl text-center">
+          <span className="font-bold text-redShade">
+            MARKETING & PROMOTIONAL
+          </span>{" "}
+          PRINTS
         </h1>
         <span className="border-2 w-1/12 mt-4" />
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 mt-8 w-full">
-          {PackagingService.map((service, index) => (
-            <div
-              key={index}
-              className="flex flex-col justify-center items-center"
-            >
-              <h2 className="text-lg text-nowrap font-medium ">{service.title}</h2>
-              <img src={service.image} className="h-56" />
+        <div className="mt-8 w-full px-4">
+          <p className="text-lg text-center mb-8 max-w-4xl mx-auto">
+            Turn your brand story into a visual journey. Our marketing materials
+            are printed with impeccable detail, premium paper, and accurate
+            color reproduction for unmatched quality.
+          </p>
+        </div>
+
+        {/* Flyers */}
+        <div className="w-full flex flex-col items-center py-8 bg-white rounded-lg px-4">
+          <h2 className="text-xl md:text-2xl font-bold text-redShade mb-6">
+            FLYERS & LEAFLETS
+          </h2>
+          <p className="text-lg text-center mb-6 max-w-4xl mx-auto">
+            Spread your message effectively with vibrant, high-quality flyers
+            designed to attract attention and convert interest into action.
+            Perfect for events, promotions, and product launches.
+          </p>
+
+          <div className="bg-gray-100 p-6 rounded-lg shadow-md mb-8 max-w-4xl w-full">
+            <h3 className="text-lg font-bold text-redShade mb-4">
+              HIGHLIGHTS:
+            </h3>
+            <ul className="list-disc list-inside grid grid-cols-1 md:grid-cols-2 gap-2">
+              {serviceHighlights.flyers.map((highlight, index) => (
+                <li key={index} className="text-gray-700">
+                  {highlight}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-6 gap-4 mt-4 w-full max-w-6xl">
+            {FlyersServices.map((service, index) => (
+              <div
+                key={index}
+                className="flex flex-col items-center text-center"
+              >
+                <img src={service.image} className="h-48 object-contain" />
+                <h3 className=" font-medium mt-2">{service.title}</h3>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Brochures & Catalogues */}
+        <div className="w-full flex flex-col items-center py-8 px-4">
+          <h2 className="text-xl md:text-2xl font-bold text-redShade mb-6">
+            BROCHURES & CATALOGUES
+          </h2>
+          <p className="text-lg text-center mb-6 max-w-4xl mx-auto">
+            Showcase your products or services in style. Our brochures and
+            catalogues combine creative design, premium printing, and
+            professional finishing.
+          </p>
+
+          <div className="bg-gray-100 p-6 rounded-lg shadow-md mb-8 max-w-4xl w-full">
+            <h3 className="text-lg font-bold text-redShade mb-4">
+              HIGHLIGHTS:
+            </h3>
+            <ul className="list-disc list-inside grid grid-cols-1 md:grid-cols-2 gap-2">
+              {serviceHighlights.brochures.map((highlight, index) => (
+                <li key={index} className="text-gray-700">
+                  {highlight}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 mt-4 w-full max-w-6xl">
+            {/* Placeholder for brochure images - you can add actual images here */}
+            <div className="flex flex-col text-center">
+              <div className="">
+                <img src="/assets/BrochureCatalogue17.png" alt="" className="h-40"/>
+              </div>
+              <h3 className=" font-medium">A4 Brochures</h3>
             </div>
-          ))}
+            <div className="flex flex-col items-center text-center">
+              <div>
+                <img src="/assets/BrochureCatalogue10.jpg" alt="" className="h-40"/>
+              </div>
+              <h3 className=" font-medium">A5 Catalogues</h3>
+            </div>
+            <div className="flex flex-col items-center text-center">
+              <div className="">
+                <img src="/assets/BrochureCatalogue2.png" alt="" className="h-40"/>
+              </div>
+              <h3 className=" font-medium">Trifold Brochures</h3>
+            </div>
+            <div className="flex flex-col items-center text-center">
+              <div className="">
+                <img src="/assets/BrochureCatalogue9.jpg" alt="" className="h-40"/>
+              </div>
+              <h3 className=" font-medium">Product Catalogues</h3>
+            </div>
+          </div>
+        </div>
+
+        {/* Stickers & Labels */}
+        <div className="w-full flex flex-col items-center py-8 bg-white rounded-lg px-4">
+          <h2 className="text-xl md:text-2xl font-bold text-redShade mb-6">
+            STICKERS & LABELS
+          </h2>
+          <p className="text-lg text-center mb-6 max-w-4xl mx-auto">
+            Custom stickers and labels for packaging, branding, and product
+            promotion. Designed for durability and aesthetics.
+          </p>
+
+          <div className="bg-gray-100 p-6 rounded-lg shadow-md mb-8 max-w-4xl w-full">
+            <h3 className="text-lg font-bold text-redShade mb-4">
+              HIGHLIGHTS:
+            </h3>
+            <ul className="list-disc list-inside grid grid-cols-1 md:grid-cols-2 gap-2">
+              {serviceHighlights.stickers.map((highlight, index) => (
+                <li key={index} className="text-gray-700">
+                  {highlight}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4 mt-4 w-full max-w-6xl">
+            {PackagingService.slice(0, 6).map((service, index) => (
+              <div
+                key={index}
+                className="flex flex-col items-center text-center"
+              >
+                <img src={service.image} className="h-32 object-contain" />
+                <h3 className=" font-medium mt-2">{service.title}</h3>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 
-      {/* ---------------- CORPORATE ---------------- */}
+      {/* ---------------- PACKAGING & PRODUCT BRANDING ---------------- */}
       <div className="w-full flex flex-col items-center py-16 bg-white">
-        <h1 className="text-2xl md:text-3xl lg:text-4xl">
-          <span className="font-bold text-redShade">CORPORATE</span> &
-          EDUCATIONAL PRINTING
+        <h1 className="text-2xl md:text-3xl lg:text-4xl text-center">
+          <span className="font-bold text-redShade">PACKAGING & PRODUCT</span>{" "}
+          BRANDING
         </h1>
         <span className="border-2 w-1/12 mt-4" />
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 mt-8 w-full">
-          {CorporateServices.map((service, index) => (
-            <div
-              key={index}
-              className="flex flex-col justify-center items-center"
-            >
-              <h2 className="text-lg font-medium">{service.title}</h2>
-              <img src={service.image} className="h-56" />
-            </div>
-          ))}
+        <div className="mt-8 w-full px-4">
+          <p className="text-lg text-center mb-8 max-w-4xl mx-auto">
+            Durable and detailed packaging solutions printed in custom shapes
+            and finishes. Perfect for branding, packaging, and promotions.
+          </p>
+        </div>
+
+        {/* Boxes */}
+        <div className="w-full flex flex-col items-center py-8 bg-[#eeeeee] rounded-lg px-4">
+          <h2 className="text-xl md:text-2xl font-bold text-redShade mb-6">
+            PACKAGING BOXES
+          </h2>
+          <p className="text-lg text-center mb-6 max-w-4xl mx-auto">
+            Durable, custom-printed boxes made to match your product's style and
+            function — from food to pharma.
+          </p>
+
+          <div className="bg-white p-6 rounded-lg shadow-md mb-8 max-w-4xl w-full">
+            <h3 className="text-lg font-bold text-redShade mb-4">
+              HIGHLIGHTS:
+            </h3>
+            <ul className="list-disc list-inside grid grid-cols-1 md:grid-cols-2 gap-2">
+              {serviceHighlights.packagingBoxes.map((highlight, index) => (
+                <li key={index} className="text-gray-700">
+                  {highlight}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4 mt-4 w-full max-w-6xl">
+            {PackagingService.slice(6, 12).map((service, index) => (
+              <div
+                key={index}
+                className="flex flex-col items-center text-center"
+              >
+                <img src={service.image} className="h-32 object-contain" />
+                <h3 className=" font-medium mt-2">{service.title}</h3>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Paper Bags */}
+        <div className="w-full flex flex-col items-center py-8 px-4">
+          <h2 className="text-xl md:text-2xl font-bold text-redShade mb-6">
+            PAPER BAGS
+          </h2>
+          <p className="text-lg text-center mb-6 max-w-4xl mx-auto">
+            Eco-friendly, strong, and stylish paper bags printed in your brand's
+            theme.
+          </p>
+
+          <div className="bg-gray-100 p-6 rounded-lg shadow-md mb-8 max-w-4xl w-full">
+            <h3 className="text-lg font-bold text-redShade mb-4">
+              HIGHLIGHTS:
+            </h3>
+            <ul className="list-disc list-inside grid grid-cols-1 md:grid-cols-2 gap-2">
+              {serviceHighlights.paperBags.map((highlight, index) => (
+                <li key={index} className="text-gray-700">
+                  {highlight}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-4 mt-4 w-full max-w-6xl">
+            {PackagingService.slice(12).map((service, index) => (
+              <div
+                key={index}
+                className="flex flex-col items-center text-center"
+              >
+                <img src={service.image} className="h-48 object-contain" />
+                <h3 className=" font-medium mt-2">{service.title}</h3>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 
-      {/* ---------------- WEDDING ---------------- */}
-      <div className="w-full flex flex-col items-center px-8 py-16">
-        <h1 className="text-2xl md:text-3xl lg:text-4xl">
+      {/* ---------------- SPECIAL PRINTING ---------------- */}
+      <div className="w-full flex flex-col items-center px-8 py-16 bg-[#eeeeee]">
+        <h1 className="text-2xl md:text-3xl lg:text-4xl text-center">
           <span className="font-bold text-redShade">SPECIAL</span> PRINTING
         </h1>
         <span className="border-2 w-1/12 mt-4" />
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 mt-8 w-full">
-          {WeddingService.map((service, index) => (
-            <div key={index}>
-              <h2 className="text-xl font-semibold">{service.title}</h2>
-              <img src={service.image} className="h-48" />
-            </div>
-          ))}
+        <div className="mt-8 w-full px-4">
+          <p className="text-lg text-center mb-8 max-w-4xl mx-auto">
+            Elegant invitation cards designed with artistry and printed with
+            perfection — because special occasions deserve extraordinary prints.
+          </p>
+        </div>
+
+        {/* Wedding Cards */}
+        <div className="w-full flex flex-col items-center py-8 bg-white rounded-lg px-4">
+          <h2 className="text-xl md:text-2xl font-bold text-redShade mb-6">
+            WEDDING & INVITATION CARDS
+          </h2>
+          <p className="text-lg text-center mb-6 max-w-4xl mx-auto">
+            Because special occasions deserve extraordinary prints. Elegant
+            invitation cards designed with artistry and printed with perfection.
+          </p>
+
+          <div className="bg-gray-100 p-6 rounded-lg shadow-md mb-8 max-w-4xl w-full">
+            <h3 className="text-lg font-bold text-redShade mb-4">
+              HIGHLIGHTS:
+            </h3>
+            <ul className="list-disc list-inside grid grid-cols-1 md:grid-cols-2 gap-2">
+              {serviceHighlights.weddingCards.map((highlight, index) => (
+                <li key={index} className="text-gray-700">
+                  {highlight}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 mt-4 w-full max-w-6xl">
+            {WeddingService.map((service, index) => (
+              <div
+                key={index}
+                className="flex flex-col items-center text-center"
+              >
+                <img src={service.image} className="h-48 object-contain" />
+                <h3 className=" font-medium mt-2">{service.title}</h3>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 
