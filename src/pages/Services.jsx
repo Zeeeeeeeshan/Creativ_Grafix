@@ -1,6 +1,11 @@
+import { useEffect } from "react";
 import CTA from "../components/CTA";
 
 export default function Services() {
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
+
   // Highlights data for each section
   const serviceHighlights = {
     visitingCards: [
@@ -903,25 +908,41 @@ export default function Services() {
             {/* Placeholder for brochure images - you can add actual images here */}
             <div className="flex flex-col text-center">
               <div className="">
-                <img src="/assets/BrochureCatalogue17.png" alt="" className="h-40"/>
+                <img
+                  src="/assets/BrochureCatalogue17.png"
+                  alt=""
+                  className="h-40"
+                />
               </div>
               <h3 className=" font-medium">A4 Brochures</h3>
             </div>
             <div className="flex flex-col items-center text-center">
               <div>
-                <img src="/assets/BrochureCatalogue10.jpg" alt="" className="h-40"/>
+                <img
+                  src="/assets/BrochureCatalogue10.jpg"
+                  alt=""
+                  className="h-40"
+                />
               </div>
               <h3 className=" font-medium">A5 Catalogues</h3>
             </div>
             <div className="flex flex-col items-center text-center">
               <div className="">
-                <img src="/assets/BrochureCatalogue2.png" alt="" className="h-40"/>
+                <img
+                  src="/assets/BrochureCatalogue2.png"
+                  alt=""
+                  className="h-40"
+                />
               </div>
               <h3 className=" font-medium">Trifold Brochures</h3>
             </div>
             <div className="flex flex-col items-center text-center">
               <div className="">
-                <img src="/assets/BrochureCatalogue9.jpg" alt="" className="h-40"/>
+                <img
+                  src="/assets/BrochureCatalogue9.jpg"
+                  alt=""
+                  className="h-40"
+                />
               </div>
               <h3 className=" font-medium">Product Catalogues</h3>
             </div>

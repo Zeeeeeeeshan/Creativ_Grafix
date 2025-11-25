@@ -1,6 +1,10 @@
+import { useEffect } from "react";
 import CTA from "../components/CTA";
 import KeyProducts from "../components/KeyProducts";
 export default function Products() {
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
   return (
     <section className="">
       <div className="relative overflow-hidden bg-redShade py-4">

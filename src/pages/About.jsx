@@ -1,5 +1,9 @@
+import { useEffect } from "react";
 import CTA from "../components/CTA";
 const About = () => {
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
   const stats = [
     {
       icon: "/AboutHappyClients.svg",

@@ -1,6 +1,10 @@
+import { useEffect } from "react";
 import CTA from "../components/CTA";
 
 export default function Contact() {
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
   return (
     <section>
       <div className="bg-[#f8fcff] shadow-lg shadow-black/10 ">
@@ -55,7 +59,9 @@ export default function Contact() {
               placeholder="Enter Your Message"
               className="border border-redShade p-1.5"
             ></textarea>
-            <button type="submit" className="bg-redShade text-white py-2">Submit</button>
+            <button type="submit" className="bg-redShade text-white py-2">
+              Submit
+            </button>
           </form>
         </div>
       </div>

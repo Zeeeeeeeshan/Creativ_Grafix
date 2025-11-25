@@ -12,9 +12,13 @@ export default function CTA() {
       </p>
 
       <div className="flex flex-col sm:flex-row justify-center gap-4">
-        <button className="border border-gray-400 text-gray-800 px-6 py-2 rounded hover:bg-gray-100 transition">
+        <a
+          href="/ProductCatalogue1.pdf"
+          download={true}
+          className="border border-gray-400 text-gray-800 px-6 py-2 rounded hover:bg-gray-100 transition"
+        >
           DOWNLOAD PRODUCT CATALOGUE
-        </button>
+        </a>
         <button className="bg-redShade text-white px-6 py-2 rounded hover:bg-red-700 transition">
           ORDER NOW
         </button>

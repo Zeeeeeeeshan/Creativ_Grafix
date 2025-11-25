@@ -4,8 +4,12 @@ import ServiceDisplay from "../components/ServiceDisplay";
 import KeyProducts from "../components/KeyProducts";
 import CTA from "../components/CTA";
 import { Star } from "lucide-react";
+import { useEffect } from "react";
 
 export default function Home() {
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
   const reviews = [
     {
       name: "Aarav Sharma",
