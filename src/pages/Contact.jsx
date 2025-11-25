@@ -62,6 +62,14 @@ export default function Contact() {
             <button type="submit" className="bg-redShade text-white py-2">
               Submit
             </button>
+            <a
+              target="_blank"
+              href="https://forms.gle/phefTmMk7bCC7PkSA"
+              className="text-redShade border border-redShade hover:bg-redShade hover:text-white py-1 flex items-center justify-center gap-1"
+            >
+              <img src="/GForm.png" alt="" className="inline h-6" />
+              Contact Us
+            </a>
           </form>
         </div>
       </div>
