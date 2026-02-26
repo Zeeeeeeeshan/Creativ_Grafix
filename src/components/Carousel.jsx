@@ -48,65 +48,84 @@ export default function DiwaliCarousel() {
 
   return (
     <div className="w-full">
-      <div className="relative rounded-4xl overflow-hidden shadow-2xl">
+      <div className="relative w-full overflow-hidden shadow-2xl rounded-3xl">
+
         {/* Carousel Container */}
         <div className="relative h-125 w-full overflow-hidden bg-gray-200">
+
           {slides.map((slide, index) => (
             <div
               key={slide.id}
-              className={`absolute inset-0 transition-all duration-700 ease-in-out ${
-                index === currentSlide
+              className={`absolute inset-0 transition-all duration-700 ease-in-out ${index === currentSlide
                   ? "opacity-100 translate-x-0"
                   : index < currentSlide
-                  ? "opacity-0 -translate-x-full"
-                  : "opacity-0 translate-x-full"
-              }`}
+                    ? "opacity-0 -translate-x-full"
+                    : "opacity-0 translate-x-full"
+                }`}
             >
-              {/* Background Image with Overlay */}
-              <div className="absolute inset-0">
-                <img
-                  src={slide.image}
-                  alt={slide.title}
-                  className="w-full h-full object-cover"
-                />
-              </div>
+              {/* Background Image */}
+              <img
+                src={slide.image}
+                alt=""
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+
+              {/* Dark Gradient Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent" />
 
               {/* Content */}
-              <div className="relative z-10 h-full flex items-center">
-                <div className="px-8 sm:px-12 lg:px-20 max-w-2xl">
-                  <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white leading-tight">
-                    {slide.title}
-                  </h2>
-                  <p className="text-2xl sm:text-3xl lg:text-4xl text-white font-semibold mb-4 sm:mb-6 text-nowrap">
-                    {slide.subtitle}
-                  </p>
-                  <p className="text-base sm:text-lg lg:text-xl text-gray-200 mb-6 sm:mb-8 whitespace-pre-line leading-relaxed">
-                    {slide.description}
-                  </p>
-                  <button className="bg-white text-redShade px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-bold text-sm sm:text-base hover:bg-redShade hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105">
-                    {slide.buttonText}
-                  </button>
+              <div className="relative z-10 h-full flex items-center justify-center text-center px-6">
+                <div className="max-w-3xl">
+
+                  {slide.title && (
+                    <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
+                      {slide.title}
+                    </h2>
+                  )}
+
+                  {slide.subtitle && (
+                    <p className="text-xl sm:text-2xl text-red-400 font-semibold mb-4">
+                      {slide.subtitle}
+                    </p>
+                  )}
+
+                  {slide.description && (
+                    <p className="text-base sm:text-lg text-gray-200 mb-8 leading-relaxed whitespace-pre-line">
+                      {slide.description}
+                    </p>
+                  )}
+
+                  {slide.buttonText && (
+                    <button className="px-8 py-3 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-full shadow-xl hover:scale-105 transition-all duration-300">
+                      {slide.buttonText}
+                    </button>
+                  )}
+
                 </div>
               </div>
             </div>
           ))}
         </div>
 
-        {/* Dot Indicators */}
-        <div className="absolute bottom-6 left-8 sm:left-12 lg:left-20 z-20 flex gap-3">
+        {/* Modern Dot Indicators */}
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 
+                bg-black/40 backdrop-blur-md 
+                px-6 py-1 rounded-full 
+                flex gap-3 shadow-lg z-50">
+
           {slides.map((_, index) => (
             <button
               key={index}
               onClick={() => goToSlide(index)}
-              className={`transition-all duration-300 rounded-full border-2 ${
-                index === currentSlide
-                  ? "bg-redShade border-white w-10 h-3"
-                  : "bg-white/40 border-white/60 w-3 h-3 hover:bg-white/60"
-              }`}
-              aria-label={`Go to slide ${index + 1}`}
+              className={`transition-all duration-300 rounded-full ${index === currentSlide
+                  ? "bg-red-600 w-10 h-3"
+                  : "bg-white/50 w-3 h-3 hover:bg-white"
+                }`}
             />
           ))}
+
         </div>
+
       </div>
     </div>
   );

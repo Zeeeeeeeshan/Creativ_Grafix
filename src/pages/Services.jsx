@@ -1,10 +1,34 @@
 import { useEffect } from "react";
 import CTA from "../components/CTA";
+import { useRef, useState } from "react";
 
 export default function Services() {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
+
+  // video function
+  const videoRef = useRef(null);
+  const [playing, setPlaying] = useState(false);
+
+  const [showVideo, setShowVideo] = useState(true);
+  const reelVideoRef = useRef(null);
+
+  const closeVideo = (e) => {
+    e.stopPropagation();
+
+    const video = reelVideoRef.current;
+    if (video) {
+      video.pause();        // stop playing
+      video.currentTime = 0; // reset time
+
+      // HARD STOP (important — kills background playback)
+      video.removeAttribute("src");
+      video.load();
+    }
+
+    setShowVideo(false);
+  };
 
   // Highlights data for each section
   const serviceHighlights = {
@@ -533,599 +557,858 @@ export default function Services() {
         </div>
 
         {/* Premium Visiting Cards */}
-        <div className="w-full flex flex-col items-center py-8 bg-[#eeeeee] rounded-lg px-4">
-          <h2 className="text-xl md:text-2xl font-bold text-redShade mb-6">
-            PREMIUM VISITING CARDS
-          </h2>
-          <p className="text-lg text-center mb-6 max-w-4xl mx-auto">
-            Make your first impression last with our premium range of visiting
-            cards — designed to reflect your brand identity and professionalism.
-            Each card is crafted using the finest materials and high-end
-            in-house printing technology to deliver sharp details and luxurious
-            finishes.
-          </p>
+        <div className="w-full py-16 px-4 bg-gradient-to-br from-gray-50 to-gray-200">
 
-          <div className="bg-white p-6 rounded-lg shadow-md mb-8 max-w-4xl w-full">
-            <h3 className="text-lg font-bold text-redShade mb-4">
-              HIGHLIGHTS:
-            </h3>
-            <ul className="list-disc list-inside grid grid-cols-1 md:grid-cols-2 gap-2">
-              {serviceHighlights.visitingCards.map((highlight, index) => (
-                <li key={index} className="text-gray-700">
-                  {highlight}
-                </li>
+          <div className="max-w-6xl mx-auto bg-white rounded-2xl shadow-xl p-8 md:p-12">
+
+            {/* Title */}
+            <div className="text-center mb-10">
+              <h2 className="text-3xl font-extrabold text-red-600 tracking-wide">
+                PREMIUM VISITING CARDS
+              </h2>
+              <div className="w-24 h-1 bg-red-600 mx-auto mt-3 rounded-full"></div>
+            </div>
+
+            {/* Description */}
+            <p className="text-lg text-gray-600 text-center max-w-3xl mx-auto leading-relaxed mb-12">
+              Make your first impression last with our premium range of visiting
+              cards — designed to reflect your brand identity and professionalism.
+              Crafted using high-end materials and advanced printing technology
+              to deliver sharp details and luxurious finishes.
+            </p>
+
+            {/* Highlights Section */}
+            <div className="bg-gray-50 border border-gray-200 rounded-xl p-8 mb-12">
+              <h3 className="text-xl font-bold text-red-600 mb-6 text-center">
+                HIGHLIGHTS
+              </h3>
+
+              <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {serviceHighlights.visitingCards.map((highlight, index) => (
+                  <li
+                    key={index}
+                    className="flex items-start gap-3 text-gray-700"
+                  >
+                    <span className="w-3 h-3 bg-red-600 rounded-full mt-2"></span>
+                    {highlight}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Services Grid */}
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+              {BusinessServices.map((service, index) => (
+                <div
+                  key={index}
+                  className="bg-gray-50 hover:bg-white rounded-xl p-4 shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2 text-center"
+                >
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    className="h-20 mx-auto object-contain mb-3"
+                  />
+                  <h3 className="font-semibold text-gray-800 text-sm">
+                    {service.title}
+                  </h3>
+                </div>
               ))}
-            </ul>
-          </div>
+            </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 mt-4 w-full max-w-6xl">
-            {BusinessServices.map((service, index) => (
-              <div
-                key={index}
-                className="flex flex-col items-center text-center"
-              >
-                <img src={service.image} className=" object-contain" />
-                <h3 className="font-medium">{service.title}</h3>
-              </div>
-            ))}
           </div>
         </div>
+
 
         {/* Letterheads */}
-        <div className="w-full flex flex-col items-center py-8 px-4">
-          <h2 className="text-xl md:text-2xl font-bold text-redShade mb-6">
-            LETTERHEADS
-          </h2>
-          <p className="text-lg text-center mb-6 max-w-4xl mx-auto">
-            Official communication that speaks volumes about your
-            professionalism. Our custom-printed letterheads are designed with
-            precision alignment, brand consistency, and premium paper quality to
-            leave a lasting impression.
-          </p>
+        <div className="w-full py-16 px-4 bg-gradient-to-br from-gray-50 to-gray-200">
 
-          <div className="bg-gray-100 p-6 rounded-lg shadow-md mb-8 max-w-4xl w-full">
-            <h3 className="text-lg font-bold text-redShade mb-4">
-              HIGHLIGHTS:
-            </h3>
-            <ul className="list-disc list-inside grid grid-cols-1 md:grid-cols-2 gap-2">
-              {serviceHighlights.letterheads.map((highlight, index) => (
-                <li key={index} className="text-gray-700">
-                  {highlight}
-                </li>
+          <div className="max-w-6xl mx-auto bg-white rounded-2xl shadow-xl p-8 md:p-12">
+
+            {/* Title */}
+            <div className="text-center mb-10">
+              <h2 className="text-3xl font-extrabold text-red-600 tracking-wide">
+                LETTERHEADS
+              </h2>
+              <div className="w-20 h-1 bg-red-600 mx-auto mt-3 rounded-full"></div>
+            </div>
+
+            {/* Description */}
+            <p className="text-lg text-gray-600 text-center max-w-3xl mx-auto leading-relaxed mb-12">
+              Official communication that speaks volumes about your professionalism.
+              Our custom-printed letterheads are crafted with precision alignment,
+              strong brand consistency, and premium paper quality to create a lasting impression.
+            </p>
+
+            {/* Highlights */}
+            <div className="bg-gray-50 border border-gray-200 rounded-xl p-8 mb-12">
+              <h3 className="text-xl font-bold text-red-600 mb-6 text-center">
+                HIGHLIGHTS
+              </h3>
+
+              <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {serviceHighlights.letterheads.map((highlight, index) => (
+                  <li
+                    key={index}
+                    className="flex items-start gap-3 text-gray-700"
+                  >
+                    <span className="w-3 h-3 bg-red-600 rounded-full mt-2"></span>
+                    {highlight}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Letterhead Showcase */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
+              {CorporateServices.slice(0, 4).map((service, index) => (
+                <div
+                  key={index}
+                  className="bg-gray-50 rounded-xl p-4 shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2 text-center"
+                >
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    className="h-44 mx-auto object-contain mb-4"
+                  />
+                  <h3 className="font-semibold text-gray-800 text-sm">
+                    {service.title}
+                  </h3>
+                </div>
               ))}
-            </ul>
-          </div>
+            </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-4 w-full max-w-6xl">
-            {CorporateServices.slice(0, 4).map((service, index) => (
-              <div
-                key={index}
-                className="flex flex-col items-center text-center"
-              >
-                <img src={service.image} className="h-48 object-contain" />
-                <h3 className=" font-medium mt-2">{service.title}</h3>
-              </div>
-            ))}
           </div>
         </div>
+
 
         {/* Envelopes */}
-        <div className="w-full flex flex-col items-center py-8 bg-[#eeeeee] rounded-lg px-4">
-          <h2 className="text-xl md:text-2xl font-bold text-redShade mb-6">
-            ENVELOPES
-          </h2>
-          <p className="text-lg text-center mb-6 max-w-4xl mx-auto">
-            Tailored envelopes that complement your brand identity. From
-            standard business envelopes to custom-sized creative ones, we
-            manufacture every piece in-house to ensure accuracy, print quality,
-            and elegance.
-          </p>
+        <div className="w-full py-4 px-2 bg-gradient-to-br from-gray-50 to-gray-200">
 
-          <div className="bg-white p-6 rounded-lg shadow-md mb-8 max-w-4xl w-full">
-            <h3 className="text-lg font-bold text-redShade mb-4">
-              HIGHLIGHTS:
-            </h3>
-            <ul className="list-disc list-inside grid grid-cols-1 md:grid-cols-2 gap-2">
-              {serviceHighlights.envelopes.map((highlight, index) => (
-                <li key={index} className="text-gray-700">
-                  {highlight}
-                </li>
+          <div className="max-w-6xl mx-auto bg-white rounded-2xl shadow-xl p-8 md:p-12">
+
+            {/* Title */}
+            <div className="text-center mb-10">
+              <h2 className="text-3xl font-extrabold text-red-600 tracking-wide">
+                ENVELOPES
+              </h2>
+              <div className="w-20 h-1 bg-red-600 mx-auto mt-3 rounded-full"></div>
+            </div>
+
+            {/* Description */}
+            <p className="text-lg text-gray-600 text-center max-w-3xl mx-auto leading-relaxed mb-12">
+              Tailored envelopes that complement your brand identity. From standard
+              business envelopes to creative custom sizes, each piece is manufactured
+              in-house to ensure premium quality, precision printing, and refined elegance.
+            </p>
+
+            {/* Highlights */}
+            <div className="bg-gray-50 border border-gray-200 rounded-xl p-8 mb-12">
+              <h3 className="text-xl font-bold text-red-600 mb-6 text-center">
+                HIGHLIGHTS
+              </h3>
+
+              <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {serviceHighlights.envelopes.map((highlight, index) => (
+                  <li
+                    key={index}
+                    className="flex items-start gap-3 text-gray-700"
+                  >
+                    <span className="w-3 h-3 bg-red-600 rounded-full mt-2"></span>
+                    {highlight}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Envelope Showcase */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
+              {CorporateServices.slice(4, 8).map((service, index) => (
+                <div
+                  key={index}
+                  className="bg-gray-50 rounded-xl p-5 shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2 text-center"
+                >
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    className="h-44 mx-auto object-contain mb-4"
+                  />
+                  <h3 className="font-semibold text-gray-800 text-sm">
+                    {service.title}
+                  </h3>
+                </div>
               ))}
-            </ul>
-          </div>
+            </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-4 w-full max-w-6xl">
-            {CorporateServices.slice(4, 8).map((service, index) => (
-              <div
-                key={index}
-                className="flex flex-col items-center text-center"
-              >
-                <img src={service.image} className="h-48 object-contain" />
-                <h3 className=" font-medium mt-2">{service.title}</h3>
-              </div>
-            ))}
           </div>
         </div>
+
 
         {/* Corporate Gifts & Merchandise */}
-        <div className="w-full flex flex-col items-center py-8 px-4">
-          <h2 className="text-xl md:text-2xl font-bold text-redShade mb-6">
-            CORPORATE GIFTS & MERCHANDISE
-          </h2>
-          <p className="text-lg text-center mb-6 max-w-4xl mx-auto">
-            Enhance your brand presence with custom corporate merchandise — all
-            designed and branded in-house.
-          </p>
+        <div className="w-full py-4 px-4 bg-gradient-to-br from-gray-50 to-gray-200">
 
-          <div className="bg-gray-100 p-6 rounded-lg shadow-md mb-8 max-w-4xl w-full">
-            <h3 className="text-lg font-bold text-redShade mb-4">
-              HIGHLIGHTS:
-            </h3>
-            <ul className="list-disc list-inside grid grid-cols-1 md:grid-cols-2 gap-2">
-              {serviceHighlights.corporateGifts.map((highlight, index) => (
-                <li key={index} className="text-gray-700">
-                  {highlight}
-                </li>
+          <div className="max-w-7xl mx-auto bg-white rounded-2xl shadow-xl p-8 md:p-12">
+
+            {/* Title */}
+            <div className="text-center mb-10">
+              <h2 className="text-3xl font-extrabold text-red-600 tracking-wide">
+                CORPORATE GIFTS & MERCHANDISE
+              </h2>
+              <div className="w-24 h-1 bg-red-600 mx-auto mt-3 rounded-full"></div>
+            </div>
+
+            {/* Description */}
+            <p className="text-lg text-gray-600 text-center max-w-3xl mx-auto leading-relaxed mb-12">
+              Enhance your brand presence with premium custom corporate merchandise —
+              thoughtfully designed, branded, and manufactured in-house to reflect
+              quality, creativity, and professionalism.
+            </p>
+
+            {/* Highlights */}
+            <div className="bg-gray-50 border border-gray-200 rounded-xl p-8 mb-12">
+              <h3 className="text-xl font-bold text-red-600 mb-6 text-center">
+                HIGHLIGHTS
+              </h3>
+
+              <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {serviceHighlights.corporateGifts.map((highlight, index) => (
+                  <li
+                    key={index}
+                    className="flex items-start gap-3 text-gray-700"
+                  >
+                    <span className="w-3 h-3 bg-red-600 rounded-full mt-2"></span>
+                    {highlight}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Merchandise Showcase */}
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6">
+              {CorporateServices.slice(8, 14).map((service, index) => (
+                <div
+                  key={index}
+                  className="bg-gray-50 rounded-xl p-5 shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2 text-center"
+                >
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    className="h-28 mx-auto object-contain mb-4"
+                  />
+                  <h3 className="font-semibold text-gray-800 text-sm">
+                    {service.title}
+                  </h3>
+                </div>
               ))}
-            </ul>
-          </div>
+            </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4 mt-4 w-full max-w-6xl">
-            {CorporateServices.slice(8, 14).map((service, index) => (
-              <div
-                key={index}
-                className="flex flex-col items-center text-center"
-              >
-                <img src={service.image} className="h-32 object-contain" />
-                <h3 className=" font-medium mt-2">{service.title}</h3>
-              </div>
-            ))}
           </div>
         </div>
+
 
         {/* Diaries */}
-        <div className="w-full flex flex-col items-center py-8 bg-[#eeeeee] rounded-lg px-4">
-          <h2 className="text-xl md:text-2xl font-bold text-redShade mb-6">
-            DIARIES
-          </h2>
-          <p className="text-lg text-center mb-6 max-w-4xl mx-auto">
-            Custom-branded diaries made with premium materials and designed for
-            functionality and elegance.
-          </p>
+        <div className="w-full py-4 px-4 bg-gradient-to-br from-gray-50 to-gray-200">
 
-          <div className="bg-white p-6 rounded-lg shadow-md mb-8 max-w-4xl w-full">
-            <h3 className="text-lg font-bold text-redShade mb-4">
-              HIGHLIGHTS:
-            </h3>
-            <ul className="list-disc list-inside grid grid-cols-1 md:grid-cols-2 gap-2">
-              {serviceHighlights.diaries.map((highlight, index) => (
-                <li key={index} className="text-gray-700">
-                  {highlight}
-                </li>
+          <div className="max-w-7xl mx-auto bg-white rounded-2xl shadow-xl p-8 md:p-12">
+
+            {/* Title */}
+            <div className="text-center mb-10">
+              <h2 className="text-3xl font-extrabold text-red-600 tracking-wide">
+                DIARIES
+              </h2>
+              <div className="w-20 h-1 bg-red-600 mx-auto mt-3 rounded-full"></div>
+            </div>
+
+            {/* Description */}
+            <p className="text-lg text-gray-600 text-center max-w-3xl mx-auto leading-relaxed mb-12">
+              Custom-branded diaries crafted with premium materials, designed for
+              functionality and refined elegance — perfect for corporate gifting and
+              professional use.
+            </p>
+
+            {/* Highlights */}
+            <div className="bg-gray-50 border border-gray-200 rounded-xl p-8 mb-12">
+              <h3 className="text-xl font-bold text-red-600 mb-6 text-center">
+                HIGHLIGHTS
+              </h3>
+
+              <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {serviceHighlights.diaries.map((highlight, index) => (
+                  <li
+                    key={index}
+                    className="flex items-start gap-3 text-gray-700"
+                  >
+                    <span className="w-3 h-3 bg-red-600 rounded-full mt-2"></span>
+                    {highlight}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Diaries Showcase */}
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6">
+              {CorporateServices.slice(14, 19).map((service, index) => (
+                <div
+                  key={index}
+                  className="bg-gray-50 rounded-xl p-5 shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2 text-center"
+                >
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    className="h-44 mx-auto object-contain mb-4"
+                  />
+                  <h3 className="font-semibold text-gray-800 text-sm">
+                    {service.title}
+                  </h3>
+                </div>
               ))}
-            </ul>
-          </div>
+            </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 mt-4 w-full max-w-6xl">
-            {CorporateServices.slice(14, 19).map((service, index) => (
-              <div
-                key={index}
-                className="flex flex-col items-center text-center"
-              >
-                <img src={service.image} className="h-48 object-contain" />
-                <h3 className=" font-medium mt-2">{service.title}</h3>
-              </div>
-            ))}
           </div>
         </div>
+
 
         {/* Educational Printing */}
-        <div className="w-full flex flex-col items-center py-8 px-4">
-          <h2 className="text-xl md:text-2xl font-bold text-redShade mb-6">
-            EDUCATIONAL PRINTING
-          </h2>
-          <p className="text-lg text-center mb-6 max-w-4xl mx-auto">
-            Customized school and college stationery that reflects your
-            institution's brand and discipline.
-          </p>
+        <div className="w-full py-4 px-4 bg-gradient-to-br from-blue-50 to-gray-100">
 
-          <div className="bg-gray-100 p-6 rounded-lg shadow-md mb-8 max-w-4xl w-full">
-            <h3 className="text-lg font-bold text-redShade mb-4">
-              HIGHLIGHTS:
-            </h3>
-            <ul className="list-disc list-inside grid grid-cols-1 md:grid-cols-2 gap-2">
-              {serviceHighlights.educational.map((highlight, index) => (
-                <li key={index} className="text-gray-700">
-                  {highlight}
-                </li>
+          <div className="max-w-7xl mx-auto bg-white rounded-2xl shadow-xl p-8 md:p-12">
+
+            {/* Title */}
+            <div className="text-center mb-10">
+              <h2 className="text-3xl font-extrabold text-red-600 tracking-wide">
+                EDUCATIONAL PRINTING
+              </h2>
+              <div className="w-20 h-1 bg-red-600 mx-auto mt-3 rounded-full"></div>
+            </div>
+
+            {/* Description */}
+            <p className="text-lg text-gray-600 text-center max-w-3xl mx-auto leading-relaxed mb-12">
+              Customized school and college stationery designed to reflect your
+              institution's brand identity, professionalism, and discipline —
+              printed with precision and premium materials.
+            </p>
+
+            {/* Highlights */}
+            <div className="bg-gray-50 border border-gray-200 rounded-xl p-8 mb-12">
+              <h3 className="text-xl font-bold text-red-600 mb-6 text-center">
+                HIGHLIGHTS
+              </h3>
+
+              <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {serviceHighlights.educational.map((highlight, index) => (
+                  <li
+                    key={index}
+                    className="flex items-start gap-3 text-gray-700"
+                  >
+                    <span className="w-3 h-3 bg-red-600 rounded-full mt-2"></span>
+                    {highlight}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Products Grid */}
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6">
+              {CorporateServices.slice(19, 24).map((service, index) => (
+                <div
+                  key={index}
+                  className="bg-gray-50 rounded-xl p-5 shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2 text-center"
+                >
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    className="h-44 mx-auto object-contain mb-4"
+                  />
+                  <h3 className="font-semibold text-gray-800 text-sm">
+                    {service.title}
+                  </h3>
+                </div>
               ))}
-            </ul>
-          </div>
+            </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 mt-4 w-full max-w-6xl">
-            {CorporateServices.slice(19, 24).map((service, index) => (
-              <div
-                key={index}
-                className="flex flex-col items-center text-center"
-              >
-                <img src={service.image} className="h-48 object-contain" />
-                <h3 className=" font-medium mt-2">{service.title}</h3>
-              </div>
-            ))}
           </div>
         </div>
+
 
         {/* Calendars */}
-        <div className="w-full flex flex-col items-center py-8 bg-[#eeeeee] rounded-lg px-4">
-          <h2 className="text-xl md:text-2xl font-bold text-redShade mb-6">
-            CALENDARS
-          </h2>
-          <p className="text-lg text-center mb-6 max-w-4xl mx-auto">
-            Keep your brand visible all year round with custom desk and wall
-            calendars.
-          </p>
+        <div className="w-full py-4 px-4 bg-gradient-to-br from-gray-50 to-gray-200">
 
-          <div className="bg-white p-6 rounded-lg shadow-md mb-8 max-w-4xl w-full">
-            <h3 className="text-lg font-bold text-redShade mb-4">
-              HIGHLIGHTS:
-            </h3>
-            <ul className="list-disc list-inside grid grid-cols-1 md:grid-cols-2 gap-2">
-              {serviceHighlights.calendars.map((highlight, index) => (
-                <li key={index} className="text-gray-700">
-                  {highlight}
-                </li>
+          <div className="max-w-7xl mx-auto bg-white rounded-2xl shadow-xl p-8 md:p-12">
+
+            {/* Title */}
+            <div className="text-center mb-10">
+              <h2 className="text-3xl font-extrabold text-red-600 tracking-wide">
+                CALENDARS
+              </h2>
+              <div className="w-20 h-1 bg-red-600 mx-auto mt-3 rounded-full"></div>
+            </div>
+
+            {/* Description */}
+            <p className="text-lg text-gray-600 text-center max-w-3xl mx-auto leading-relaxed mb-12">
+              Keep your brand visible all year round with custom desk and wall calendars —
+              professionally designed and printed with premium finishes.
+            </p>
+
+            {/* Highlights */}
+            <div className="bg-gray-50 border border-gray-200 rounded-xl p-8 mb-12">
+              <h3 className="text-xl font-bold text-red-600 mb-6 text-center">
+                HIGHLIGHTS
+              </h3>
+
+              <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {serviceHighlights.calendars.map((highlight, index) => (
+                  <li
+                    key={index}
+                    className="flex items-start gap-3 text-gray-700"
+                  >
+                    <span className="w-3 h-3 bg-red-600 rounded-full mt-2"></span>
+                    {highlight}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Calendar Showcase */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+              {CorporateServices.slice(24).map((service, index) => (
+                <div
+                  key={index}
+                  className="bg-gray-50 rounded-xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 text-center"
+                >
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    className="h-52 mx-auto object-contain mb-4"
+                  />
+                  <h3 className="font-semibold text-gray-800 text-base">
+                    {service.title}
+                  </h3>
+                </div>
               ))}
-            </ul>
-          </div>
+            </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-4 w-full max-w-6xl">
-            {CorporateServices.slice(24).map((service, index) => (
-              <div
-                key={index}
-                className="flex flex-col items-center text-center"
-              >
-                <img src={service.image} className="h-56 object-contain" />
-                <h3 className=" font-medium mt-2">{service.title}</h3>
-              </div>
-            ))}
           </div>
         </div>
+
 
         {/* Vouchers & Bill Books */}
-        <div className="w-full flex flex-col items-center py-8 px-4">
-          <h2 className="text-xl md:text-2xl font-bold text-redShade mb-6">
-            VOUCHERS & BILL BOOKS
-          </h2>
-          <p className="text-lg text-center mb-6 max-w-4xl mx-auto">
-            Professionally printed multi-copy bill books and vouchers designed
-            for accuracy, branding, and durability.
-          </p>
+        <div className="w-full py-4 px-4 bg-gradient-to-br from-gray-50 to-gray-200">
 
-          <div className="bg-gray-100 p-6 rounded-lg shadow-md mb-8 max-w-4xl w-full">
-            <h3 className="text-lg font-bold text-redShade mb-4">
-              HIGHLIGHTS:
-            </h3>
-            <ul className="list-disc list-inside grid grid-cols-1 md:grid-cols-2 gap-2">
-              {serviceHighlights.billBooks.map((highlight, index) => (
-                <li key={index} className="text-gray-700">
-                  {highlight}
-                </li>
+          <div className="max-w-7xl mx-auto bg-white rounded-2xl shadow-xl p-8 md:p-12">
+
+            {/* Title */}
+            <div className="text-center mb-10">
+              <h2 className="text-3xl font-extrabold text-red-600 tracking-wide">
+                VOUCHERS & BILL BOOKS
+              </h2>
+              <div className="w-24 h-1 bg-red-600 mx-auto mt-3 rounded-full"></div>
+            </div>
+
+            {/* Description */}
+            <p className="text-lg text-gray-600 text-center max-w-3xl mx-auto leading-relaxed mb-12">
+              Professionally printed multi-copy bill books and vouchers designed for
+              precision, brand consistency, and long-term durability — perfect for
+              businesses of all sizes.
+            </p>
+
+            {/* Highlights */}
+            <div className="bg-gray-50 border border-gray-200 rounded-xl p-8 mb-12">
+              <h3 className="text-xl font-bold text-red-600 mb-6 text-center">
+                HIGHLIGHTS
+              </h3>
+
+              <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {serviceHighlights.billBooks.map((highlight, index) => (
+                  <li
+                    key={index}
+                    className="flex items-start gap-3 text-gray-700"
+                  >
+                    <span className="w-3 h-3 bg-red-600 rounded-full mt-2"></span>
+                    {highlight}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Voucher Showcase */}
+            <div className="flex flex-wrap justify-center gap-8">
+              {VoucherService.map((voucher, index) => (
+                <div
+                  key={index}
+                  className="bg-gray-50 rounded-xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 text-center w-64"
+                >
+                  <img
+                    src={voucher.image}
+                    alt={voucher.title}
+                    className="h-44 mx-auto object-contain mb-4"
+                  />
+                  <h3 className="text-lg font-semibold text-gray-800">
+                    {voucher.title}
+                  </h3>
+                </div>
               ))}
-            </ul>
-          </div>
+            </div>
 
-          <div className="flex flex-wrap justify-center gap-12 mt-4 w-full max-w-6xl">
-            {VoucherService.map((voucher, index) => (
-              <div key={index} className="text-center">
-                <img src={voucher.image} className="h-48 object-contain" />
-                <h2 className="text-xl font-bold mt-2">{voucher.title}</h2>
-              </div>
-            ))}
           </div>
         </div>
+
       </div>
 
       {/* ---------------- MARKETING & PROMOTIONAL PRINTS ---------------- */}
-      <div className="w-full flex flex-col items-center py-16 bg-[#eeeeee]">
-        <h1 className="text-2xl md:text-3xl lg:text-4xl text-center">
-          <span className="font-bold text-redShade">
-            MARKETING & PROMOTIONAL
-          </span>{" "}
-          PRINTS
-        </h1>
-        <span className="border-2 w-1/12 mt-4" />
+      <div className="w-full flex flex-col items-center py-4 bg-gradient-to-b from-gray-100 to-white">
 
-        <div className="mt-8 w-full px-4">
-          <p className="text-lg text-center mb-8 max-w-4xl mx-auto">
+        {/* Main Heading */}
+        <div className="text-center mb-12">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-light tracking-wide text-gray-800">
+            <span className="font-bold text-redShade">
+              MARKETING & PROMOTIONAL
+            </span>{" "}
+            PRINTS
+          </h1>
+          <div className="w-24 h-1 bg-redShade mx-auto mt-6 rounded-full"></div>
+        </div>
+
+        <div className="mt-6 w-full px-4">
+          <p className="text-lg text-center text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed">
             Turn your brand story into a visual journey. Our marketing materials
             are printed with impeccable detail, premium paper, and accurate
             color reproduction for unmatched quality.
           </p>
         </div>
 
-        {/* Flyers */}
-        <div className="w-full flex flex-col items-center py-8 bg-white rounded-lg px-4">
-          <h2 className="text-xl md:text-2xl font-bold text-redShade mb-6">
+        {/* Flyers Section */}
+        <div className="w-full max-w-7xl bg-white rounded-3xl shadow-xl border border-gray-100 p-10 mb-4">
+
+          <h2 className="text-2xl md:text-3xl font-semibold text-redShade text-center mb-6">
             FLYERS & LEAFLETS
           </h2>
-          <p className="text-lg text-center mb-6 max-w-4xl mx-auto">
+
+          <p className="text-lg text-center text-gray-600 mb-8 max-w-3xl mx-auto">
             Spread your message effectively with vibrant, high-quality flyers
             designed to attract attention and convert interest into action.
             Perfect for events, promotions, and product launches.
           </p>
 
-          <div className="bg-gray-100 p-6 rounded-lg shadow-md mb-8 max-w-4xl w-full">
-            <h3 className="text-lg font-bold text-redShade mb-4">
+          <div className="bg-gray-50 p-8 rounded-2xl border border-gray-200 shadow-sm mb-10">
+            <h3 className="text-lg font-semibold text-redShade mb-4">
               HIGHLIGHTS:
             </h3>
-            <ul className="list-disc list-inside grid grid-cols-1 md:grid-cols-2 gap-2">
+            <ul className="grid grid-cols-1 md:grid-cols-2 gap-3 text-gray-700">
               {serviceHighlights.flyers.map((highlight, index) => (
-                <li key={index} className="text-gray-700">
+                <li key={index} className="flex items-start gap-2">
+                  <span className="w-2 h-2 bg-redShade mt-2 rounded-full"></span>
                   {highlight}
                 </li>
               ))}
             </ul>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-6 gap-4 mt-4 w-full max-w-6xl">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-6 gap-6">
             {FlyersServices.map((service, index) => (
               <div
                 key={index}
-                className="flex flex-col items-center text-center"
+                className="group bg-white border border-gray-200 rounded-2xl p-4 shadow-sm hover:shadow-xl hover:-translate-y-1 transition duration-300 text-center"
               >
-                <img src={service.image} className="h-48 object-contain" />
-                <h3 className=" font-medium mt-2">{service.title}</h3>
+                <img
+                  src={service.image}
+                  className="h-40 object-contain mx-auto transition duration-300 group-hover:scale-105"
+                />
+                <h3 className="font-medium mt-4 text-gray-800">
+                  {service.title}
+                </h3>
               </div>
             ))}
           </div>
         </div>
 
-        {/* Brochures & Catalogues */}
-        <div className="w-full flex flex-col items-center py-8 px-4">
-          <h2 className="text-xl md:text-2xl font-bold text-redShade mb-6">
+        {/* Brochures Section */}
+        <div className="w-full max-w-7xl bg-white rounded-3xl shadow-xl border border-gray-100 p-10 mb-4">
+
+          <h2 className="text-2xl md:text-3xl font-semibold text-redShade text-center mb-6">
             BROCHURES & CATALOGUES
           </h2>
-          <p className="text-lg text-center mb-6 max-w-4xl mx-auto">
+
+          <p className="text-lg text-center text-gray-600 mb-8 max-w-3xl mx-auto">
             Showcase your products or services in style. Our brochures and
             catalogues combine creative design, premium printing, and
             professional finishing.
           </p>
 
-          <div className="bg-gray-100 p-6 rounded-lg shadow-md mb-8 max-w-4xl w-full">
-            <h3 className="text-lg font-bold text-redShade mb-4">
+          <div className="bg-gray-50 p-8 rounded-2xl border border-gray-200 shadow-sm mb-10">
+            <h3 className="text-lg font-semibold text-redShade mb-4">
               HIGHLIGHTS:
             </h3>
-            <ul className="list-disc list-inside grid grid-cols-1 md:grid-cols-2 gap-2">
+            <ul className="grid grid-cols-1 md:grid-cols-2 gap-3 text-gray-700">
               {serviceHighlights.brochures.map((highlight, index) => (
-                <li key={index} className="text-gray-700">
+                <li key={index} className="flex items-start gap-2">
+                  <span className="w-2 h-2 bg-redShade mt-2 rounded-full"></span>
                   {highlight}
                 </li>
               ))}
             </ul>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 mt-4 w-full max-w-6xl">
-            {/* Placeholder for brochure images - you can add actual images here */}
-            <div className="flex flex-col text-center">
-              <div className="">
-                <img
-                  src="/assets/BrochureCatalogue17.png"
-                  alt=""
-                  className="h-40"
-                />
-              </div>
-              <h3 className=" font-medium">A4 Brochures</h3>
-            </div>
-            <div className="flex flex-col items-center text-center">
-              <div>
-                <img
-                  src="/assets/BrochureCatalogue10.jpg"
-                  alt=""
-                  className="h-40"
-                />
-              </div>
-              <h3 className=" font-medium">A5 Catalogues</h3>
-            </div>
-            <div className="flex flex-col items-center text-center">
-              <div className="">
-                <img
-                  src="/assets/BrochureCatalogue2.png"
-                  alt=""
-                  className="h-40"
-                />
-              </div>
-              <h3 className=" font-medium">Trifold Brochures</h3>
-            </div>
-            <div className="flex flex-col items-center text-center">
-              <div className="">
-                <img
-                  src="/assets/BrochureCatalogue9.jpg"
-                  alt=""
-                  className="h-40"
-                />
-              </div>
-              <h3 className=" font-medium">Product Catalogues</h3>
-            </div>
-          </div>
-        </div>
-
-        {/* Stickers & Labels */}
-        <div className="w-full flex flex-col items-center py-8 bg-white rounded-lg px-4">
-          <h2 className="text-xl md:text-2xl font-bold text-redShade mb-6">
-            STICKERS & LABELS
-          </h2>
-          <p className="text-lg text-center mb-6 max-w-4xl mx-auto">
-            Custom stickers and labels for packaging, branding, and product
-            promotion. Designed for durability and aesthetics.
-          </p>
-
-          <div className="bg-gray-100 p-6 rounded-lg shadow-md mb-8 max-w-4xl w-full">
-            <h3 className="text-lg font-bold text-redShade mb-4">
-              HIGHLIGHTS:
-            </h3>
-            <ul className="list-disc list-inside grid grid-cols-1 md:grid-cols-2 gap-2">
-              {serviceHighlights.stickers.map((highlight, index) => (
-                <li key={index} className="text-gray-700">
-                  {highlight}
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4 mt-4 w-full max-w-6xl">
-            {PackagingService.slice(0, 6).map((service, index) => (
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+            {[
+              { img: "/assets/BrochureCatalogue17.png", title: "A4 Brochures" },
+              { img: "/assets/BrochureCatalogue10.jpg", title: "A5 Catalogues" },
+              { img: "/assets/BrochureCatalogue2.png", title: "Trifold Brochures" },
+              { img: "/assets/BrochureCatalogue9.jpg", title: "Product Catalogues" }
+            ].map((item, index) => (
               <div
                 key={index}
-                className="flex flex-col items-center text-center"
+                className="group bg-white border border-gray-200 rounded-2xl p-4 shadow-sm hover:shadow-xl hover:-translate-y-1 transition duration-300 text-center"
               >
-                <img src={service.image} className="h-32 object-contain" />
-                <h3 className=" font-medium mt-2">{service.title}</h3>
+                <img
+                  src={item.img}
+                  className="h-40 object-contain mx-auto transition duration-300 group-hover:scale-105"
+                />
+                <h3 className="font-medium mt-4 text-gray-800">
+                  {item.title}
+                </h3>
               </div>
             ))}
           </div>
         </div>
+
+        {/* Stickers Section */}
+        <div className="w-full max-w-7xl bg-white rounded-3xl shadow-xl border border-gray-100 p-10">
+
+          <h2 className="text-2xl md:text-3xl font-semibold text-redShade text-center mb-6">
+            STICKERS & LABELS
+          </h2>
+
+          <p className="text-lg text-center text-gray-600 mb-8 max-w-3xl mx-auto">
+            Custom stickers and labels for packaging, branding, and product
+            promotion. Designed for durability and aesthetics.
+          </p>
+
+          <div className="bg-gray-50 p-8 rounded-2xl border border-gray-200 shadow-sm mb-10">
+            <h3 className="text-lg font-semibold text-redShade mb-4">
+              HIGHLIGHTS:
+            </h3>
+            <ul className="grid grid-cols-1 md:grid-cols-2 gap-3 text-gray-700">
+              {serviceHighlights.stickers.map((highlight, index) => (
+                <li key={index} className="flex items-start gap-2">
+                  <span className="w-2 h-2 bg-redShade mt-2 rounded-full"></span>
+                  {highlight}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6">
+            {PackagingService.slice(0, 6).map((service, index) => (
+              <div
+                key={index}
+                className="group bg-white border border-gray-200 rounded-2xl p-4 shadow-sm hover:shadow-xl hover:-translate-y-1 transition duration-300 text-center"
+              >
+                <img
+                  src={service.image}
+                  className="h-32 object-contain mx-auto transition duration-300 group-hover:scale-105"
+                />
+                <h3 className="font-medium mt-4 text-gray-800">
+                  {service.title}
+                </h3>
+              </div>
+            ))}
+          </div>
+
+        </div>
+
       </div>
 
-      {/* ---------------- PACKAGING & PRODUCT BRANDING ---------------- */}
-      <div className="w-full flex flex-col items-center py-16 bg-white">
-        <h1 className="text-2xl md:text-3xl lg:text-4xl text-center">
-          <span className="font-bold text-redShade">PACKAGING & PRODUCT</span>{" "}
-          BRANDING
-        </h1>
-        <span className="border-2 w-1/12 mt-4" />
 
-        <div className="mt-8 w-full px-4">
-          <p className="text-lg text-center mb-8 max-w-4xl mx-auto">
+
+      {/* ---------------- PACKAGING & PRODUCT BRANDING ---------------- */}
+      <div className="w-full flex flex-col items-center py-6 bg-gradient-to-b from-white to-gray-50">
+
+        {/* Section Heading */}
+        <div className="text-center mb-14">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-light tracking-wide text-gray-800">
+            <span className="font-bold text-redShade">PACKAGING & PRODUCT</span>{" "}
+            BRANDING
+          </h1>
+          <div className="w-24 h-1 bg-redShade mx-auto mt-6 rounded-full"></div>
+        </div>
+
+        <div className="mt-4 w-full px-4">
+          <p className="text-lg text-center text-gray-600 mb-14 max-w-3xl mx-auto leading-relaxed">
             Durable and detailed packaging solutions printed in custom shapes
             and finishes. Perfect for branding, packaging, and promotions.
           </p>
         </div>
 
-        {/* Boxes */}
-        <div className="w-full flex flex-col items-center py-8 bg-[#eeeeee] rounded-lg px-4">
-          <h2 className="text-xl md:text-2xl font-bold text-redShade mb-6">
+        {/* ================= BOXES ================= */}
+        <div className="w-full max-w-7xl bg-white rounded-3xl shadow-xl border border-gray-100 p-10 mb-4">
+
+          <h2 className="text-2xl md:text-3xl font-semibold text-redShade text-center mb-6">
             PACKAGING BOXES
           </h2>
-          <p className="text-lg text-center mb-6 max-w-4xl mx-auto">
+
+          <p className="text-lg text-center text-gray-600 mb-10 max-w-3xl mx-auto">
             Durable, custom-printed boxes made to match your product's style and
             function — from food to pharma.
           </p>
 
-          <div className="bg-white p-6 rounded-lg shadow-md mb-8 max-w-4xl w-full">
-            <h3 className="text-lg font-bold text-redShade mb-4">
+          {/* Highlights */}
+          <div className="bg-gray-50 p-8 rounded-2xl border border-gray-200 shadow-sm mb-12">
+            <h3 className="text-lg font-semibold text-redShade mb-6">
               HIGHLIGHTS:
             </h3>
-            <ul className="list-disc list-inside grid grid-cols-1 md:grid-cols-2 gap-2">
+
+            <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 text-gray-700">
               {serviceHighlights.packagingBoxes.map((highlight, index) => (
-                <li key={index} className="text-gray-700">
+                <li key={index} className="flex items-start gap-3">
+                  <span className="w-2 h-2 bg-redShade mt-2 rounded-full"></span>
                   {highlight}
                 </li>
               ))}
             </ul>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4 mt-4 w-full max-w-6xl">
+          {/* Products Grid */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6">
             {PackagingService.slice(6, 12).map((service, index) => (
               <div
                 key={index}
-                className="flex flex-col items-center text-center"
+                className="group bg-white border border-gray-200 rounded-2xl p-4 shadow-sm hover:shadow-xl hover:-translate-y-1 transition duration-300 text-center"
               >
-                <img src={service.image} className="h-32 object-contain" />
-                <h3 className=" font-medium mt-2">{service.title}</h3>
+                <img
+                  src={service.image}
+                  className="h-32 object-contain mx-auto transition duration-300 group-hover:scale-105"
+                />
+                <h3 className="font-medium mt-4 text-gray-800">
+                  {service.title}
+                </h3>
               </div>
             ))}
           </div>
         </div>
 
-        {/* Paper Bags */}
-        <div className="w-full flex flex-col items-center py-8 px-4">
-          <h2 className="text-xl md:text-2xl font-bold text-redShade mb-6">
+        {/* ================= PAPER BAGS ================= */}
+        <div className="w-full max-w-7xl bg-white rounded-3xl shadow-xl border border-gray-100 p-10">
+
+          <h2 className="text-2xl md:text-3xl font-semibold text-redShade text-center mb-6">
             PAPER BAGS
           </h2>
-          <p className="text-lg text-center mb-6 max-w-4xl mx-auto">
+
+          <p className="text-lg text-center text-gray-600 mb-10 max-w-3xl mx-auto">
             Eco-friendly, strong, and stylish paper bags printed in your brand's
             theme.
           </p>
 
-          <div className="bg-gray-100 p-6 rounded-lg shadow-md mb-8 max-w-4xl w-full">
-            <h3 className="text-lg font-bold text-redShade mb-4">
+          {/* Highlights */}
+          <div className="bg-gray-50 p-8 rounded-2xl border border-gray-200 shadow-sm mb-12">
+            <h3 className="text-lg font-semibold text-redShade mb-6">
               HIGHLIGHTS:
             </h3>
-            <ul className="list-disc list-inside grid grid-cols-1 md:grid-cols-2 gap-2">
+
+            <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 text-gray-700">
               {serviceHighlights.paperBags.map((highlight, index) => (
-                <li key={index} className="text-gray-700">
+                <li key={index} className="flex items-start gap-3">
+                  <span className="w-2 h-2 bg-redShade mt-2 rounded-full"></span>
                   {highlight}
                 </li>
               ))}
             </ul>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-4 mt-4 w-full max-w-6xl">
+          {/* Products Grid */}
+          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-6">
             {PackagingService.slice(12).map((service, index) => (
               <div
                 key={index}
-                className="flex flex-col items-center text-center"
+                className="group bg-white border border-gray-200 rounded-2xl p-4 shadow-sm hover:shadow-xl hover:-translate-y-1 transition duration-300 text-center"
               >
-                <img src={service.image} className="h-48 object-contain" />
-                <h3 className=" font-medium mt-2">{service.title}</h3>
+                <img
+                  src={service.image}
+                  className="h-44 object-contain mx-auto transition duration-300 group-hover:scale-105"
+                />
+                <h3 className="font-medium mt-4 text-gray-800">
+                  {service.title}
+                </h3>
               </div>
             ))}
           </div>
         </div>
+
       </div>
 
-      {/* ---------------- SPECIAL PRINTING ---------------- */}
-      <div className="w-full flex flex-col items-center px-8 py-16 bg-[#eeeeee]">
-        <h1 className="text-2xl md:text-3xl lg:text-4xl text-center">
-          <span className="font-bold text-redShade">SPECIAL</span> PRINTING
-        </h1>
-        <span className="border-2 w-1/12 mt-4" />
 
-        <div className="mt-8 w-full px-4">
-          <p className="text-lg text-center mb-8 max-w-4xl mx-auto">
+      {/* ---------------- SPECIAL PRINTING ---------------- */}
+      <div className="w-full flex flex-col items-center px-6 md:px-10 py-8 bg-gradient-to-b from-[#f9f6f2] to-[#eeeeee]">
+
+        {/* Section Heading */}
+        <div className="text-center mb-14">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-light tracking-wide text-gray-800">
+            <span className="font-bold text-redShade">SPECIAL</span> PRINTING
+          </h1>
+          <div className="w-24 h-1 bg-redShade mx-auto mt-6 rounded-full"></div>
+        </div>
+
+        <div className="mt-4 w-full px-4">
+          <p className="text-lg text-center text-gray-600 mb-16 max-w-3xl mx-auto leading-relaxed">
             Elegant invitation cards designed with artistry and printed with
             perfection — because special occasions deserve extraordinary prints.
           </p>
         </div>
 
-        {/* Wedding Cards */}
-        <div className="w-full flex flex-col items-center py-8 bg-white rounded-lg px-4">
-          <h2 className="text-xl md:text-2xl font-bold text-redShade mb-6">
+        {/* Wedding Cards Container */}
+        <div className="w-full max-w-7xl bg-white rounded-3xl shadow-2xl border border-gray-100 p-10">
+
+          <h2 className="text-2xl md:text-3xl font-semibold text-redShade text-center mb-6 tracking-wide">
             WEDDING & INVITATION CARDS
           </h2>
-          <p className="text-lg text-center mb-6 max-w-4xl mx-auto">
+
+          <p className="text-lg text-center text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed">
             Because special occasions deserve extraordinary prints. Elegant
             invitation cards designed with artistry and printed with perfection.
           </p>
 
-          <div className="bg-gray-100 p-6 rounded-lg shadow-md mb-8 max-w-4xl w-full">
-            <h3 className="text-lg font-bold text-redShade mb-4">
+          {/* Highlights Box */}
+          <div className="bg-gradient-to-r from-gray-50 to-white p-8 rounded-2xl border border-gray-200 shadow-sm mb-14">
+            <h3 className="text-lg font-semibold text-redShade mb-6 tracking-wide">
               HIGHLIGHTS:
             </h3>
-            <ul className="list-disc list-inside grid grid-cols-1 md:grid-cols-2 gap-2">
+
+            <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 text-gray-700">
               {serviceHighlights.weddingCards.map((highlight, index) => (
-                <li key={index} className="text-gray-700">
+                <li key={index} className="flex items-start gap-3">
+                  <span className="w-2 h-2 bg-redShade mt-2 rounded-full"></span>
                   {highlight}
                 </li>
               ))}
             </ul>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 mt-4 w-full max-w-6xl">
+          {/* Product Grid */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
             {WeddingService.map((service, index) => (
               <div
                 key={index}
-                className="flex flex-col items-center text-center"
+                className="group bg-white border border-gray-200 rounded-2xl p-4 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition duration-300 text-center"
               >
-                <img src={service.image} className="h-48 object-contain" />
-                <h3 className=" font-medium mt-2">{service.title}</h3>
+                <div className="overflow-hidden rounded-xl">
+                  <img
+                    src={service.image}
+                    className="h-48 object-contain mx-auto transition duration-500 group-hover:scale-105"
+                  />
+                </div>
+
+                <h3 className="font-medium mt-4 text-gray-800 tracking-wide">
+                  {service.title}
+                </h3>
               </div>
             ))}
           </div>
+
         </div>
       </div>
 
+
       <CTA />
+
+      
     </section>
   );
 }

@@ -74,57 +74,79 @@ export default function ServiceDisplay() {
 
   return (
     <Link to="/services">
-      <section className="bg-[#222222] flex flex-col py-10 gap-y-7 w-full rounded-t overflow-hidden">
-        <div className="flex flex-col justify-center items-center">
-          <h1 className="text-white text-2xl md:text-3xl lg:text-4xl">
-            OUR <span className="font-bold text-redShade">SERVICES</span>
-          </h1>
-          <span className="border-2 border-white w-20 my-3"></span>
-        </div>
+  <section className="bg-gradient-to-b from-[#1f1f1f] to-[#2a2a2a] 
+                      py-8 w-full overflow-hidden">
 
-        {/* Auto-scrolling container */}
-        <div
-          ref={scrollRef}
-          className="overflow-x-hidden scrollbar-hide px-4 md:px-8"
-        >
-          <div className="flex ">
-            {duplicatedServices.map((service, index) => (
-              <div
-                key={`${service.id}-${index}`}
-                className="flex-shrink-0 w-45 md:w-64 group cursor-pointer"
-              >
-                <div className="rounded-2xl overflow-hidden">
-                  {/* Image Container with fixed height */}
-                  <div className="h-44 md:h-52 lg:h-60 flex items-center justify-center">
-                    <img
-                      src={service.image}
-                      alt={service.title}
-                      className="w-full h-full object-contain"
-                    />
-                  </div>
+    {/* Header */}
+    <div className="text-center mb-12">
+      <p className="text-gray-400 uppercase tracking-[3px] text-sm mb-3">
+        What We Offer
+      </p>
+      <h2 className="text-3xl md:text-4xl font-bold text-white">
+        OUR <span className="text-redShade">SERVICES</span>
+      </h2>
+      <div className="w-24 h-[2px] bg-redShade mx-auto mt-4"></div>
+    </div>
 
-                  {/* Title */}
-                  <div className="py-4 px-6">
-                    <h3 className="text-white font-bold text-center text-sm md:text-base lg:text-lg tracking-wider">
-                      {service.title}
-                    </h3>
-                  </div>
-                </div>
+    {/* Auto-scrolling container */}
+    <div
+      ref={scrollRef}
+      className="overflow-x-hidden px-6"
+    >
+      <div className="flex gap-8">
+
+        {duplicatedServices.map((service, index) => (
+          <div
+            key={`${service.id}-${index}`}
+            className="flex-shrink-0 w-52 md:w-64"
+          >
+
+            {/* Card */}
+            <div className="group bg-[#2f2f2f] 
+                            rounded-2xl 
+                            border border-white/10
+                            shadow-[0_8px_25px_rgba(0,0,0,0.3)]
+                            hover:shadow-[0_12px_35px_rgba(0,0,0,0.5)]
+                            transition-all duration-500
+                            p-6 text-center">
+
+              {/* Icon */}
+              <div className="h-40 flex items-center justify-center mb-5">
+                <img
+                  src={service.image}
+                  alt={service.title}
+                  className="h-full object-contain 
+                             transition-transform duration-500
+                             group-hover:scale-105"
+                />
               </div>
-            ))}
-          </div>
-        </div>
 
-        <style jsx>{`
-          .scrollbar-hide::-webkit-scrollbar {
-            display: none;
-          }
-          .scrollbar-hide {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-          }
-        `}</style>
-      </section>
-    </Link>
+              {/* Title */}
+              <h3 className="text-white font-semibold 
+                             text-sm md:text-base 
+                             tracking-wider
+                             group-hover:text-redShade
+                             transition-colors duration-300">
+                {service.title}
+              </h3>
+
+              {/* Accent Line */}
+              <div className="mt-4 h-[2px] w-0 bg-redShade 
+                              mx-auto 
+                              group-hover:w-12 
+                              transition-all duration-500">
+              </div>
+
+            </div>
+
+          </div>
+        ))}
+
+      </div>
+    </div>
+
+  </section>
+</Link>
+
   );
 }

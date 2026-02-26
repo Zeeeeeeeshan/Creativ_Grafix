@@ -1,10 +1,34 @@
 import { useEffect } from "react";
 import CTA from "../components/CTA";
 import KeyProducts from "../components/KeyProducts";
+import { useRef, useState } from "react";
 export default function Products() {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
+
+   // video function
+  const videoRef = useRef(null);
+  const [playing, setPlaying] = useState(false);
+
+  const [showVideo, setShowVideo] = useState(true);
+  const reelVideoRef = useRef(null);
+
+  const closeVideo = (e) => {
+    e.stopPropagation();
+
+    const video = reelVideoRef.current;
+    if (video) {
+      video.pause();        // stop playing
+      video.currentTime = 0; // reset time
+
+      // HARD STOP (important — kills background playback)
+      video.removeAttribute("src");
+      video.load();
+    }
+
+    setShowVideo(false);
+  };
   return (
     <section className="">
       <div className="relative overflow-hidden bg-redShade py-4">
@@ -54,6 +78,7 @@ export default function Products() {
         <KeyProducts color={"white"} />
       </div>
       <CTA />
+     
     </section>
   );
 }

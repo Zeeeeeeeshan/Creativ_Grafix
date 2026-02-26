@@ -42,12 +42,7 @@ export default function KeyProducts({ color }) {
         "/assets/VisitingCard13.png",
         "/assets/VisitingCard14.png",
         "/assets/VisitingCard15.png",
-        "/assets/VisitingCard16.jpeg",
-        "/assets/VisitingCard17.jpeg",
-        "/assets/VisitingCard18.jpeg",
-        "/assets/VisitingCard19.jpeg",
-        "/assets/VisitingCard20.jpeg",
-        "/assets/VisitingCard21.jpeg",
+        
       ],
     },
     {
@@ -120,6 +115,7 @@ export default function KeyProducts({ color }) {
         "/assets/LetterheadEnvelops12.png",
         "/assets/LetterheadEnvelops13.jpg",
         "/assets/LetterheadEnvelops14.jpg",
+        "/assets/LetterheadEnvelops11.png",
       ],
     },
     {
@@ -246,55 +242,96 @@ export default function KeyProducts({ color }) {
 
   // Find the selected product’s images
   const selectedData =
-    ProductData.find((p) => p.name === selectedProduct)?.items || [];
+    // ProductData.find((p) => p.name === selectedProduct)?.items || [];
+    ProductData.find((p) => p.name === selectedProduct)?.items.slice(0, 15) || [];
 
   return (
     <div className="w-full">
-      {/* Top Scrollable Tabs */}
-      <div className="flex overflow-x-scroll scrollbar-hide">
-        <div className="flex gap-x-3">
+
+      {/* ================= TABS ================= */}
+      <div className="flex overflow-x-auto scrollbar-hide py-6">
+        <div className="flex gap-4 px-4">
+
           {products.map((product) => (
             <div
               key={product.name}
-              className={`flex flex-col items-center justify-center w-41.5 p-3 cursor-pointer rounded-t-2xl transition-all ${
-                selectedProduct === product.name
-                  ? `${color ? `bg-${color}` : "bg-red-200"}`
-                  : "bg-gray-200"
-              }`}
               onClick={() => setSelectedProduct(product.name)}
+              className={`group flex flex-col items-center justify-center 
+    min-w-[130px] px-4 py-2 rounded-2xl cursor-pointer 
+    transition-all duration-300 border shadow-sm
+    ${selectedProduct === product.name
+                  ? "bg-red-600 text-white border-red-600 shadow-xl scale-105"
+                  : "bg-white border-gray-200 hover:bg-red-600 hover:text-white hover:border-red-600 hover:shadow-lg"
+                }`}
             >
               <img
                 src={product.icon}
                 alt={product.name}
-                className="w-10 h-10"
+                className={`w-12 h-12 mb-2 transition-all duration-300
+      ${selectedProduct === product.name
+                    ? "brightness-0 invert"
+                    : "group-hover:brightness-0 group-hover:invert"
+                  }`}
               />
-              <span className="mt-2 text-center text-sm">{product.name}</span>
+
+              <span className="text-sm font-semibold text-center">
+                {product.name}
+              </span>
             </div>
           ))}
+
         </div>
       </div>
 
-      {/* Image Display Area */}
-      <div
-        className={`w-full py-10 bg-${color ? color : "red-50"} rounded-b-2xl`}
-      >
+      {/* ================= IMAGE GRID ================= */}
+      <div className="w-full py-12 bg-gradient-to-b from-red-50 to-white rounded-3xl">
+
         {selectedData.length > 0 ? (
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 w-full gap-2">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 px-6">
+
             {selectedData.map((src, index) => (
-              <Link to={"/services"} key={index} className="">
-                <img
-                  key={index}
-                  src={src}
-                  alt={`${selectedProduct} ${index + 1}`}
-                  className="h-65 w-full rounded-xl p-2 bg-gray-200 shadow-md hover:scale-105 transition-transform duration-200"
-                />
+              <Link to="/services" key={index}>
+
+                <div className="group relative overflow-hidden rounded-3xl bg-white shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+
+                  {/* Image */}
+                  <img
+                    src={src}
+                    alt={`${selectedProduct} ${index + 1}`}
+                    className="h-56 w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+
+                  {/* Overlay */}
+                  <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-center justify-center">
+
+                    {/* Premium Button */}
+                    <button
+                      className="px-6 py-2 bg-white text-black font-semibold rounded-full shadow-lg 
+                                 transform translate-y-6 group-hover:translate-y-0 
+                                 transition-all duration-500 
+                                 hover:bg-red-600 hover:text-white"
+                    >
+                      View Design
+                    </button>
+
+                  </div>
+
+                </div>
+
               </Link>
             ))}
+
           </div>
         ) : (
-          <p className="text-center text-gray-500">No images available.</p>
+          <p className="text-center text-gray-500 text-lg">
+            No images available.
+          </p>
         )}
+
       </div>
+
     </div>
+
+
   );
 }

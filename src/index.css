@@ -7,6 +7,19 @@
   --color-redShade: #800000;
 }
 
+@keyframes softBlink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+
+.blink-soft {
+  animation: softBlink 1.8s ease-in-out infinite;
+}
+
 body {
   font-family: "Montserrat", sans-serif;
 }

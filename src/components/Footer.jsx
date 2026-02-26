@@ -1,12 +1,15 @@
 import { Link } from "react-router-dom";
+import { FaArrowRight, FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 
 const Footer = () => {
   return (
     <footer className="bg-[#222222] text-gray-400 font-montserrat">
+
       {/* Top Section */}
-      <div className="max-w-7xl mx-auto py-12 px-6 flex flex-col md:flex-row justify-between items-start">
+      <div className="max-w-7xl mx-auto py-12 px-6 grid md:grid-cols-4 gap-12">
+
         {/* Logo + About */}
-        <div className="md:w-1/3">
+        <div>
           <img
             src="/FooterLogo.svg"
             alt="Creativ Grafix Logo"
@@ -22,30 +25,35 @@ const Footer = () => {
 
         {/* Quick Links */}
         <div className="hidden md:block">
-          <h3 className="text-redShade font-semibold mb-3">Quick Links</h3>
-          <ul className="space-y-2 text-sm list-disc ml-7">
+          <h3 className="text-white font-semibold mb-4">Quick Links</h3>
+          <ul className="space-y-3 text-sm">
             <li>
-              <Link to="/" className="hover:text-redShade">
+              <Link to="/" className="flex items-center gap-2 hover:text-redShade group transition">
+                <FaArrowRight className="text-xs group-hover:translate-x-1 transition-transform duration-300" />
                 Home
               </Link>
             </li>
             <li>
-              <Link to="/about" className="hover:text-redShade">
+              <Link to="/about" className="flex items-center gap-2 hover:text-redShade group transition">
+                <FaArrowRight className="text-xs group-hover:translate-x-1 transition-transform duration-300" />
                 About Us
               </Link>
             </li>
             <li>
-              <Link to="/services" className="hover:text-redShade">
+              <Link to="/services" className="flex items-center gap-2 hover:text-redShade group transition">
+                <FaArrowRight className="text-xs group-hover:translate-x-1 transition-transform duration-300" />
                 Our Services
               </Link>
             </li>
             <li>
-              <Link to="/portfolio" className="hover:text-redShade">
-                Our Portfolio
+              <Link to="/products" className="flex items-center gap-2 hover:text-redShade group transition">
+                <FaArrowRight className="text-xs group-hover:translate-x-1 transition-transform duration-300" />
+                Our Products
               </Link>
             </li>
             <li>
-              <Link to="/contact" className="hover:text-redShade">
+              <Link to="/contact" className="flex items-center gap-2 hover:text-redShade group transition">
+                <FaArrowRight className="text-xs group-hover:translate-x-1 transition-transform duration-300" />
                 Contact Us
               </Link>
             </li>
@@ -54,76 +62,109 @@ const Footer = () => {
 
         {/* Our Services */}
         <div className="hidden md:block">
-          <h3 className="text-redShade font-semibold mb-3">Our Services</h3>
-          <ul className="space-y-2 text-sm list-disc ml-7">
+          <h3 className="text-white font-semibold mb-4">Our Services</h3>
+          <ul className="space-y-3 text-sm">
             <li>
-              <Link to={"/services"}>Business Cards</Link>
+              <Link to="/services" className="flex items-center gap-2 hover:text-redShade group transition">
+                <FaArrowRight className="text-xs group-hover:translate-x-1 transition-transform duration-300" />
+                Business Cards
+              </Link>
             </li>
             <li>
-              <Link to={"/services"}>Brochures & Flyers</Link>
+              <Link to="/services" className="flex items-center gap-2 hover:text-redShade group transition">
+                <FaArrowRight className="text-xs group-hover:translate-x-1 transition-transform duration-300" />
+                Brochures & Flyers
+              </Link>
             </li>
             <li>
-              <Link to={"/services"}>File & Diaries</Link>
+              <Link to="/services" className="flex items-center gap-2 hover:text-redShade group transition">
+                <FaArrowRight className="text-xs group-hover:translate-x-1 transition-transform duration-300" />
+                File & Diaries
+              </Link>
             </li>
             <li>
-              <Link to={"/services"}>Packaging Boxes</Link>
+              <Link to="/services" className="flex items-center gap-2 hover:text-redShade group transition">
+                <FaArrowRight className="text-xs group-hover:translate-x-1 transition-transform duration-300" />
+                Packaging Boxes
+              </Link>
             </li>
             <li>
-              <Link to={"/services"}>Design Services</Link>
+              <Link to="/services" className="flex items-center gap-2 hover:text-redShade group transition">
+                <FaArrowRight className="text-xs group-hover:translate-x-1 transition-transform duration-300" />
+                Design Services
+              </Link>
             </li>
           </ul>
         </div>
 
         {/* Contact Us */}
         <div>
-          <h3 className="text-redShade font-semibold mb-3">Contact Us</h3>
-          <ul className="space-y-3 text-sm">
-            {/* Email → Gmail */}
-            <li className="flex items-center gap-2">
-              <img src="/FooterMail.svg" alt="mail" className="w-4 h-4" />
+          <h3 className="text-white font-semibold mb-5 text-lg">
+            Address
+          </h3>
+
+          <ul className="space-y-5 text-sm">
+
+           
+
+            {/* Address */}
+            <li className="flex items-start gap-3">
+              <FaMapMarkerAlt className="text-redShade mt-1" />
+              <div>
+                <a
+                  href="https://www.google.com/maps/search/?api=1&query=Redhills+Opp+Rupani+Apartments+Hyderabad+Telangana+500004"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-redShade transition font-bold"
+                >
+                  Redhills, Opp. Rupani Apartments
+                  <br />
+                  Hyderabad, Telangana - 500004
+                </a>
+
+                {/* Highlight Time Box */}
+                {/* Highlight Time Box */}
+                <div className="mt-3 inline-block bg-[#2a2a2a] border border-redShade/40 px-4 py-2 rounded-lg">
+                  <p className="text-white font-semibold text-sm blink-soft">
+                    10:30 AM to 08:30 PM
+                  </p>
+                  <p className="text-gray-400 text-xs">
+                    Monday to Saturday
+                  </p>
+                </div>
+
+              </div>
+            </li>
+             {/* Email */}
+            <li className="flex items-center gap-3">
+              <FaEnvelope className="text-redShade" />
               <a
                 href="https://mail.google.com/mail/?view=cm&fs=1&to=logoncreative@gmail.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-redShade"
+                className="font-medium hover:text-redShade transition"
               >
                 logoncreative@gmail.com
               </a>
             </li>
 
-            {/* Phone → WhatsApp */}
-            <li className="flex items-center gap-2">
-              <img src="/FooterPhone.svg" alt="phone" className="w-4 h-4" />
+            {/* Phone */}
+            <li className="flex items-center gap-3">
+              <FaPhoneAlt className="text-redShade" />
               <a
                 href="https://wa.me/919392227180"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-redShade"
+                className="font-medium hover:text-redShade transition"
               >
                 +91 9392227180
               </a>
             </li>
 
-            {/* Address → Google Maps */}
-            <li className="flex items-start gap-2">
-              <img
-                src="/FooterLocation.svg"
-                alt="location"
-                className="w-4 h-4 mt-1"
-              />
-              <a
-                href="https://www.google.com/maps/search/?api=1&query=Redhills+Opp+Rupani+Apartments+Hyderabad+Telangana+500004"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-redShade"
-              >
-                Redhills, Opp. Rupani Apartments
-                <br />
-                Hyderabad, Telangana - 500004
-              </a>
-            </li>
           </ul>
         </div>
+
+
       </div>
 
       {/* Bottom Section */}
@@ -134,23 +175,16 @@ const Footer = () => {
           </p>
 
           <div className="flex items-center gap-6 mt-3 sm:mt-0">
-            <Link
-              to="/contact"
-              className="flex items-center gap-2 hover:text-red-500"
-            >
-              <img src="/FooterPrivacy.svg" alt="privacy" className="w-4 h-4" />
+            <Link to="/contact" className="hover:text-redShade transition">
               Privacy Policy
             </Link>
-            <Link
-              to="/contact"
-              className="flex items-center gap-2 hover:text-red-500"
-            >
-              <img src="/FooterTerms.svg" alt="terms" className="w-4 h-4" />
+            <Link to="/contact" className="hover:text-redShade transition">
               Terms of Service
             </Link>
           </div>
         </div>
       </div>
+
     </footer>
   );
 };

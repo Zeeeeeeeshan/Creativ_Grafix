@@ -6,7 +6,7 @@ export default function Navbar() {
 
   const navLinks = [
     { icon: "/NavHome.png", name: "HOME", path: "/" },
-    { icon: "/NavAbout.svg", name: "ABOUT", path: "/about" },
+    { icon: "/NavAbout.svg", name: "ABOUT US", path: "/about" },
     { icon: "/NavServices.svg", name: "SERVICES", path: "/services" },
     { icon: "/NavProducts.svg", name: "PRODUCTS", path: "/products" },
     { icon: "/NavContact.svg", name: "CONTACT", path: "/contact" },
